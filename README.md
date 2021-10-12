@@ -1,19 +1,24 @@
 # Mod-5-Final-Project-NK
 
-**Sweet Project Title**
+**Modular**
 
-This is the part where I tell you about the project. The "pitch", if you will. I'm giving you a high level overview of what the project does, and why I decided to build it. This doesn't have to be extensive, just a quick overview.
+Modular is a website that provides a platform for users to get ideas for home renovation and design and to connect homeowners to professionals. 
 
-This is the repo for, say, the frontend of the app. It's hosted here and the backend repo is here.
 
-User Stories
+**User Stories**
 
-As a user, I want to be able to create an account, so I can log in and use the app.
-As a user, I want to be able to see my user info, so etc etc etc
-As an editor, I want to be able to do an admin thing, so I can etc etc
-(Have one story for each feature you plan to include—even small features are great to list here, so feel free to get granular with it. You'll probably be making a new branch for each of these, right?)
+As a user, I want to be able to create an new account
+As a user, I want to be able to login to my account
+As a user, I want to be able to see my user info in the dashboard
+As a user, I want to be able to see my saved ideas, contacts in the dashboard
+As a user, I want to be able to remove my saved ideas, contacts from the dashboard to keep it organized
+As a user, I can explore/browse home renovation ideas
+As a user, I can browse contractors near me 
+As a user, I can add a image with description
+As a user, I can find an image based off filters
 
-Models and Relationships
+
+**Models and Relationships**
 This is a good place for a sweet diagram:
 
 My Data Relationships
@@ -36,7 +41,9 @@ variety
 weight
 price
 description
-API
+
+**API**
+
 Here's where you want to describe each API endpoint you're building/using. You can put this in your front end repo, your back end repo, or both.
 
 GET /api/users
@@ -59,7 +66,7 @@ And this is what it returns:
 Wireframe / Mockup
 Put your sweet wireframes and mockup images here. Probably only goes in the front end repo.
 
-Wireframe
+**Wireframe**
 
 Another Wireframe
 
