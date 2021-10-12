@@ -8,15 +8,7 @@
 
 **User Stories**
 
-As a user, I want to be able to create an new account
-As a user, I want to be able to login to my account
-As a user, I want to be able to see my user info in the dashboard
-As a user, I want to be able to see my saved ideas, contacts in the dashboard
-As a user, I want to be able to remove my saved ideas, contacts from the dashboard to keep it organized
-As a user, I can explore/browse home renovation ideas
-As a user, I can browse contractors near me 
-As a user, I can add a image with description
-As a user, I can find an image based off filters
+<img width="670" alt="Screen Shot 2021-10-12 at 4 48 48 PM" src="https://user-images.githubusercontent.com/82845011/137043847-18be7948-f684-469a-a61f-d95aa63410ec.png">
 
 
 **Models and Relationships**
