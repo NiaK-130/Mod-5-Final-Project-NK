@@ -1,8 +1,9 @@
-# Mod-5-Final-Project-NK
+# Mod-5-Modular-NK
 
 **Modular**
 
 Modular is a website that provides a platform for users to get ideas for home renovation and design and to connect homeowners to professionals. 
+<img width="539" alt="Screen Shot 2021-10-12 at 4 42 49 PM" src="https://user-images.githubusercontent.com/82845011/137043383-41cd558a-75d9-4c8a-9e90-67f1b7998e00.png">
 
 
 **User Stories**
