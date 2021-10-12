@@ -2,7 +2,8 @@
 
 **Modular**
 
-<img width="539" alt="Screen Shot 2021-10-12 at 4 42 49 PM" src="https://user-images.githubusercontent.com/82845011/137043383-41cd558a-75d9-4c8a-9e90-67f1b7998e00.png">
+<img width="651" alt="Screen Shot 2021-10-12 at 4 45 03 PM" src="https://user-images.githubusercontent.com/82845011/137043573-65d0e5d4-eaa3-4f88-b4f4-a4c8c5d72972.png">
+
 
 
 **User Stories**
