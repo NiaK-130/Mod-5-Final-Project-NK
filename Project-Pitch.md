@@ -18,7 +18,15 @@
 
 Contains 5 RESTful routes: show, index, create, update, and destroy.
 
-{'''} 
+**posts**
+
+{
+  id: 1
+  header: "new kitchen renovation"
+  description: "remodelled the entire kitchen, a 3 month project"
+  notes: "want to do the same cabinets"
+  user_id : 1
+}
 
 
 **Wireframe**
