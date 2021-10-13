@@ -48,7 +48,7 @@
   company_name: "JB Design",
   phone_number: 788-909-7897
   address: "123 Lantz Avenue, San Jose CA"
-  professional_id: 1
+  professional_id: 2
 }
 
 
