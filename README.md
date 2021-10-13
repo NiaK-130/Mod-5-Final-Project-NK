@@ -52,8 +52,9 @@ Wireframe / Mockup
 Put your sweet wireframes and mockup images here. Probably only goes in the front end repo.
 
 **Wireframe**
+<img width="850" alt="Screen Shot 2021-10-13 at 8 54 36 AM" src="https://user-images.githubusercontent.com/82845011/137169669-dafa0ede-1636-4e0e-b549-1507ff873039.png">
 
-Another Wireframe
+<img width="848" alt="Screen Shot 2021-10-13 at 8 54 58 AM" src="https://user-images.githubusercontent.com/82845011/137169728-f49a4b38-53ab-43a4-8570-78fd0e062c5a.png">
 
-Contact info and other stuff
-Put anything else you want here!
+
+
