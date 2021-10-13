@@ -18,10 +18,7 @@
 
 Contains 5 RESTful routes: show, index, create, update, and destroy.
 
-''' {
-
-
-} '''
+{'''} 
 
 
 **Wireframe**
