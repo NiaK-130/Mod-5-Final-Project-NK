@@ -26,7 +26,9 @@ Contains 5 RESTful routes: show, index, create, update, and destroy.
   description: "remodelled the entire kitchen, a 3 month project"
   notes: "want to do the same cabinets"
   user_id : 1
-}```
+    }
+
+
 
 
 **Wireframe**
