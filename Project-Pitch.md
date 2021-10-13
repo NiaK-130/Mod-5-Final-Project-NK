@@ -33,6 +33,11 @@ Contains 5 RESTful routes: show, index, create, update, and destroy.
 
 ```
 
+**Wireframe**
+
+<img width="762" alt="Screen Shot 2021-10-13 at 3 32 06 PM" src="https://user-images.githubusercontent.com/82845011/137221558-c36aab20-0089-4200-801a-d17781df4734.png">
+
+<img width="763" alt="Screen Shot 2021-10-13 at 3 32 29 PM" src="https://user-images.githubusercontent.com/82845011/137221592-4a6c4804-d73d-4486-87ba-6bb3a070d63c.png">
 
 
 
