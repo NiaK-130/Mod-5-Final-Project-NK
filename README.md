@@ -21,12 +21,9 @@
 <img width="670" alt="Screen Shot 2021-10-12 at 6 53 38 PM" src="https://user-images.githubusercontent.com/82845011/137053465-effea95c-122d-4018-97ed-3e18a202a4d3.png">
 
 
-User
-
 - A user has many posts
 - A user has many professionals
 - A post belongs to a user 
-
 
 
 
