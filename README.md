@@ -17,6 +17,14 @@
 This is a good place for a sweet diagram:
 
 
+
+<img width="670" alt="Screen Shot 2021-10-12 at 6 53 38 PM" src="https://user-images.githubusercontent.com/82845011/137053465-effea95c-122d-4018-97ed-3e18a202a4d3.png">
+
+
+
+
+
+
 **API**
 
 Here's where you want to describe each API endpoint you're building/using. You can put this in your front end repo, your back end repo, or both.
