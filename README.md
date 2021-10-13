@@ -8,7 +8,8 @@
 
 **User Stories**
 
-<img width="670" alt="Screen Shot 2021-10-12 at 4 48 48 PM" src="https://user-images.githubusercontent.com/82845011/137043847-18be7948-f684-469a-a61f-d95aa63410ec.png">
+<img width="1153" alt="Screen Shot 2021-10-12 at 5 56 42 PM" src="https://user-images.githubusercontent.com/82845011/137048774-37273ef2-57d7-496b-a208-cf74a5b491d8.png">
+
 
 
 **Models and Relationships**
