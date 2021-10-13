@@ -18,6 +18,20 @@
 
 Contains 5 RESTful routes: show, index, create, update, and destroy.
 
+**users** 
+
+``` 
+
+{
+  id: 1
+  username: "samplename"
+  password: "hardpassword123"
+  full_name: "Sample Name"
+  
+  }
+
+```
+
 **posts**
 
 ``` 
@@ -29,6 +43,19 @@ Contains 5 RESTful routes: show, index, create, update, and destroy.
   notes: "want to do the same cabinets"
   user_id : 1
   
+  }
+
+```
+
+**professionals** 
+
+``` 
+
+{
+company_name: "JB Designs"
+phone_number: 768-894-7890
+address: 123 Lantz Avenue, San Jose CA
+professional_id:  1
   }
 
 ```
