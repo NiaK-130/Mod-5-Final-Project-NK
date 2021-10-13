@@ -14,26 +14,6 @@
 **Models and Relationships**
 This is a good place for a sweet diagram:
 
-My Data Relationships
-
-User
-A User has many Pickles, and so on and so forth
-
-id
-username
-password_digest
-firstname
-lastname
-birthday
-favorite color
-Pickle
-A Pickle belongs to a User, and so on
-
-id
-variety
-weight
-price
-description
 
 **API**
 
