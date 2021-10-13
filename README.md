@@ -8,7 +8,8 @@
 
 **User Stories**
 
-<img width="1153" alt="Screen Shot 2021-10-12 at 5 56 42 PM" src="https://user-images.githubusercontent.com/82845011/137048774-37273ef2-57d7-496b-a208-cf74a5b491d8.png">
+<img width="628" alt="Screen Shot 2021-10-12 at 5 57 57 PM" src="https://user-images.githubusercontent.com/82845011/137048855-c2299b95-ca5d-4dc6-81c9-9ed4593bdfc6.png">
+
 
 
 
