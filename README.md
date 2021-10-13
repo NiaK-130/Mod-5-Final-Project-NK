@@ -29,27 +29,30 @@
 
 **API**
 
-Here's where you want to describe each API endpoint you're building/using. You can put this in your front end repo, your back end repo, or both.
-
-GET /api/users
-Returns a list of all users. Response JSON looks like this:
-
-{ 
-  id: 111,
-  username: "johndoe",
-  firstname: "John",
-  lastname: "Doe",
-  etc: "etc"
+ Will have 5 RESTful routes: show, index, create, update, and destroy.
+ 
+ **posts** 
+ 
+ { 
+  id: 1,
+  header: "Custom Home",
+  description: "Example of a beach style bedroom design",
+  notes: "can do this style in guest bedroom"
+  user_id: 1
 }
-POST /api/users
-Creates a new user. Say more about that here. Send this data:
 
-{ this is what it takes as data }
-And this is what it returns:
+**professionals** 
 
-{ this is what you get back }
-Wireframe / Mockup
-Put your sweet wireframes and mockup images here. Probably only goes in the front end repo.
+ { 
+  id: 1,
+  company_name: "JB Design",
+  phone_number: 788-909-7897
+  address: "123 Lantz Avenue, San Jose CA"
+  professional_id: 1
+}
+
+
+
 
 **Wireframe**
 
