@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Mod-5-Final-Project-NK/static/css/main.a617e044.chunk.css",
+    "main.js": "/Mod-5-Final-Project-NK/static/js/main.00c353c6.chunk.js",
+    "main.js.map": "/Mod-5-Final-Project-NK/static/js/main.00c353c6.chunk.js.map",
+    "runtime-main.js": "/Mod-5-Final-Project-NK/static/js/runtime-main.44a0a5c4.js",
+    "runtime-main.js.map": "/Mod-5-Final-Project-NK/static/js/runtime-main.44a0a5c4.js.map",
+    "static/js/2.a47f94fe.chunk.js": "/Mod-5-Final-Project-NK/static/js/2.a47f94fe.chunk.js",
+    "static/js/2.a47f94fe.chunk.js.map": "/Mod-5-Final-Project-NK/static/js/2.a47f94fe.chunk.js.map",
+    "static/js/3.3b79842f.chunk.js": "/Mod-5-Final-Project-NK/static/js/3.3b79842f.chunk.js",
+    "static/js/3.3b79842f.chunk.js.map": "/Mod-5-Final-Project-NK/static/js/3.3b79842f.chunk.js.map",
+    "index.html": "/Mod-5-Final-Project-NK/index.html",
+    "static/css/main.a617e044.chunk.css.map": "/Mod-5-Final-Project-NK/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.a47f94fe.chunk.js.LICENSE.txt": "/Mod-5-Final-Project-NK/static/js/2.a47f94fe.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/Mod-5-Final-Project-NK/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.44a0a5c4.js",
+    "static/js/2.a47f94fe.chunk.js",
+    "static/css/main.a617e044.chunk.css",
+    "static/js/main.00c353c6.chunk.js"
+  ]
+}
