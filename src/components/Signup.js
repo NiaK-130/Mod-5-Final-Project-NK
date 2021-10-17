@@ -1,16 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import {useHistory} from "react-router-dom";
 
 function Signup() {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
-    // const production = ""
-    // const development = ""
-    // const url = (process.env.NODE_ENV ? production : development)
+    const production = ""
+    const development = "http://localhost:3002/"
+    const url = (process.env.NODE_ENV ? production : development)
+    const history = useHistory();
+       
 
-    function handleSignupSubmit() {
-        e.preventDefault
+    function handleSignupSubmit(e) {
+        e.preventDefault();
         fetch(`${url}/users`, {
             method: "POST",
             headers: {
@@ -22,8 +25,7 @@ function Signup() {
 
             .then((r) => r.json())
             .then((data) => {
-                
-                setUser(data.user);
+                history.push("/home");
             }
             );
     }
