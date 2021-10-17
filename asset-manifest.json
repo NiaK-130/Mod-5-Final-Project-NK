@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/Mod-5-Final-Project-NK/static/css/main.a617e044.chunk.css",
-    "main.js": "/Mod-5-Final-Project-NK/static/js/main.00c353c6.chunk.js",
-    "main.js.map": "/Mod-5-Final-Project-NK/static/js/main.00c353c6.chunk.js.map",
-    "runtime-main.js": "/Mod-5-Final-Project-NK/static/js/runtime-main.44a0a5c4.js",
-    "runtime-main.js.map": "/Mod-5-Final-Project-NK/static/js/runtime-main.44a0a5c4.js.map",
-    "static/js/2.a47f94fe.chunk.js": "/Mod-5-Final-Project-NK/static/js/2.a47f94fe.chunk.js",
-    "static/js/2.a47f94fe.chunk.js.map": "/Mod-5-Final-Project-NK/static/js/2.a47f94fe.chunk.js.map",
-    "static/js/3.3b79842f.chunk.js": "/Mod-5-Final-Project-NK/static/js/3.3b79842f.chunk.js",
-    "static/js/3.3b79842f.chunk.js.map": "/Mod-5-Final-Project-NK/static/js/3.3b79842f.chunk.js.map",
-    "index.html": "/Mod-5-Final-Project-NK/index.html",
-    "static/css/main.a617e044.chunk.css.map": "/Mod-5-Final-Project-NK/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.a47f94fe.chunk.js.LICENSE.txt": "/Mod-5-Final-Project-NK/static/js/2.a47f94fe.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/Mod-5-Final-Project-NK/static/media/logo.6ce24c58.svg"
+    "main.css": "/modular-frontend/static/css/main.a617e044.chunk.css",
+    "main.js": "/modular-frontend/static/js/main.a05c09b7.chunk.js",
+    "main.js.map": "/modular-frontend/static/js/main.a05c09b7.chunk.js.map",
+    "runtime-main.js": "/modular-frontend/static/js/runtime-main.5b2de117.js",
+    "runtime-main.js.map": "/modular-frontend/static/js/runtime-main.5b2de117.js.map",
+    "static/js/2.e2c70a24.chunk.js": "/modular-frontend/static/js/2.e2c70a24.chunk.js",
+    "static/js/2.e2c70a24.chunk.js.map": "/modular-frontend/static/js/2.e2c70a24.chunk.js.map",
+    "static/js/3.7b62cb41.chunk.js": "/modular-frontend/static/js/3.7b62cb41.chunk.js",
+    "static/js/3.7b62cb41.chunk.js.map": "/modular-frontend/static/js/3.7b62cb41.chunk.js.map",
+    "index.html": "/modular-frontend/index.html",
+    "static/css/main.a617e044.chunk.css.map": "/modular-frontend/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.e2c70a24.chunk.js.LICENSE.txt": "/modular-frontend/static/js/2.e2c70a24.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/modular-frontend/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.44a0a5c4.js",
-    "static/js/2.a47f94fe.chunk.js",
+    "static/js/runtime-main.5b2de117.js",
+    "static/js/2.e2c70a24.chunk.js",
     "static/css/main.a617e044.chunk.css",
-    "static/js/main.00c353c6.chunk.js"
+    "static/js/main.a05c09b7.chunk.js"
   ]
 }
