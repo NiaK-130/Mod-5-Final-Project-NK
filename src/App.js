@@ -1,7 +1,6 @@
 // import './App.css';
 import React, { useEffect, useState } from 'react';
-import SigninHome from './components/SigninHome.js';
-import Login from './components/Login';
+// import SigninHome from './components/SigninHome.js';
 // import Signup from './components/Signup.js';
 import Home from './components/Home';
 import Dashboard from './components/Dashboard';
@@ -9,7 +8,7 @@ import LoginPage from "./components/LoginPage"
 import Profile from './components/Profile';
 import {
   BrowserRouter as Router,
-  Switch, Link, Route
+  Link, Route
 
 } from 'react-router-dom'
 
@@ -42,7 +41,7 @@ function App() {
           console.log("please log in")
         }
       });
-      }, []);
+      });
       
       
       function signup(username, password, bio, avatar) {

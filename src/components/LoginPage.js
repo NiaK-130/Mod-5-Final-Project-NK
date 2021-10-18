@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 export default function LoginPage({ login, signup }) {
 
     const [username, setUsername] = useState('')
@@ -20,10 +20,8 @@ export default function LoginPage({ login, signup }) {
 
     return (
         <div className="Login">
-            <div className="logo-img-container">
-                <img className="logo-img" src="./Images/modular-logo" alt="modular-logo" />
-            </div >
 
+            <img className = "logo-img" src = "./Images/logo.png" alt = "modular-logo" />
 
             <form onSubmit={(e) => handleSubmitLogin(e)}>
                 <input
@@ -66,6 +64,8 @@ export default function LoginPage({ login, signup }) {
                     value={avatar}
                     onChange={(e) => setAvatar(e.target.value)}
                 />
+
+
                 <button type="submit">Signup</button>
             </form>
         </div>
