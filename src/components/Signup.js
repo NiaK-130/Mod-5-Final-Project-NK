@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export default function Signup({ signup }) {  
+export default function Signup({signup}) {  
 
     const [newUsername, setNewUsername] = useState('')
     const [newPassword, setNewPassword] = useState('')
@@ -13,35 +13,56 @@ export default function Signup({ signup }) {
     }
 
     return (
-        <div className="Login">
+        <div className="signup-box">
+
             <form onSubmit={(e) => handleSubmitSignup(e)}>
-                <input
-                    placeholder="username"
+
+            <p className = "sign-up-text"><label>Sign Up </label></p>
+                
+                <div className = "sign-up-header">
+                <p><label>Email :
+                <input className = "sign-up-email"
+                    placeholder="email"
                     type="text"
                     value={newUsername}
                     onChange={(e) => setNewUsername(e.target.value)}
-                />
-                <input
+                /> </label></p>
+                </div>
+
+
+                <div className = "sign-up-header">
+                <p><label>Password :
+                <input className = "sign-up-password"
                     placeholder="password"
                     type="text"
                     value={newPassword}
                     onChange={(e) => setNewPassword(e.target.value)}
-                />
-                <input
-                    placeholder="bio"
+                />  </label></p>
+                </div>
+
+
+                <div className = "sign-up-header">
+                <p><label> Confirmation:
+                <input className = "sign-up-password"
+                    placeholder="password confirmation"
                     type="text"
                     value={bio}
                     onChange={(e) => setBio(e.target.value)}
-                />
-                <input
-                    placeholder="avatar"
+                /> </label></p>
+                 </div>
+
+
+                 <div className = "sign-up-header">
+                 <p><label> Full Name:
+                <input className = "sign-up-password"
+                    placeholder="full name"
                     type="text"
                     value={avatar}
                     onChange={(e) => setAvatar(e.target.value)}
-                />
+                /> </label></p>
+                </div>
 
-
-                <button type="submit">Signup</button>
+                <button className="sign-up-page-button" type="submit">Join now</button>
             </form>
         </div>
     )

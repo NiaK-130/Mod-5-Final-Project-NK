@@ -19,106 +19,253 @@ code {
 
 }
 
-form {
-  background-color: #faf8f3;
-  border: 0.5px solid rgb(2, 1, 1);
+
+.sign-in-button{
+  color: #fff;
+  background-color: black;
+  margin-left: 73%;
+  padding: 1.3%;
+  width:6%;
+  height:45px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
+  display:flex;
+  align-items: center;
+  margin-top: -70px;
+  text-align: center;
+  
+  
+  }
+  
+  
+  .sign-up-button{
+  color: #fff;
+  background-color: black;
+  margin-left: 80%;
+  padding: 1.3%;
+  width:6%;
+  height:45px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
+  display:flex;
+  align-items: center;
+  margin-top: -51px;
+  text-align: center;
+  
+  }
+
+  
+.signin-box{
+
+  background-color: #5e0c69;
   display: flex;
   flex-direction: column;
-  width: 400px;
-  margin: 0 auto;
-  padding: 0 1rem 1rem;
-  border-radius: .5rem;
+  width: 100%;
+  /* margin: 0 auto; */
+  /* padding: 0 1rem 1rem; */
+  align-items: center;
+  margin-top: 3%;
+  color: rgb(255, 255, 255);
+  height:830px;
+
 }
 
-form input {
-  margin: 0.25rem 0;
-  display: block;
-  box-sizing: border-box;
-  width: 90%;
-  height: 2.4375rem;
-  margin-top:3%;
-  margin-left: 4%;
-  padding: .5rem;
-  border: 1px solid #e2e2e2;
-  border-radius: .5rem;
-  background-color: #adbffa;
-  box-shadow: inset 0 1px 2px rgb(10 10 10 / 10%);
-  font-family: inherit;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #0a0a0a;
-  transition: box-shadow .5s,border-color .25s ease-in-out;
-  background-color: rgb(255, 255, 255);
+.signup-box{
 
+  background-color: #23a34e;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* margin: 0 auto; */
+  /* padding: 0 1rem 1rem; */
+  align-items: center;
+  margin-top: 3%;
+  color: rgb(255, 255, 255);
+  height:830px;
+}
+
+.sign-in-text{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bolder;
+  font-feature-settings: "abvf";
+  font-size: 35px;
+  margin-top:5%;
+  color: rgb(255, 255, 255);
+}
+
+.sign-up-text{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bolder;
+  font-feature-settings: "abvf";
+  font-size: 35px;
+  margin-top:5%;
+  color: #f5f4f4;
+}
+
+.login-email{
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  width: 300%;
+  height: 2.4375rem;
+  margin-top:15%;
+  color: rgb(255, 255, 255);
+  
+}
+
+.sign-up-email{
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  width: 300%;
+  height: 2.4375rem;
+  margin-top:10%;
+  color: rgb(255, 255, 255);
+
+}
+
+.email-header{
+  font-size: 18px;
+  font-weight: bold;
+
+}
+
+
+.sign-up-header{
+  font-size: 18px;
+  font-weight: bold;
+
+}
+
+.password-header{
+  font-size: 18px;
+  font-weight: bold;
+
+}
+
+::placeholder{
+  color: rgb(252, 246, 246);
+  font-size: 15px;
+}
+
+.sign-up-password{
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  width: 300%;
+  height: 2.4375rem;
+  margin-top:8%;
+  color: rgb(255, 255, 255);
+
+}
+
+.login-password{
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  width: 300%;
+  height: 2.4375rem;
+  margin-top:15%;
+  color: rgb(255, 255, 255);
+}
+
+.sign-in-page-button{
+  background: transparent;
+  border: 1px solid #ffffff;
+  width:76%;
+  height:40px;
+  margin-top:15%;
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+  font-size: 18px;
+  
+}
+
+.sign-up-page-button{
+  background: transparent;
+  border: 1px solid #ffffff;
+  width:76%;
+  height:40px;
+  margin-top:15%;
+  color: rgb(255, 254, 254);
+  font-weight: bolder;
+  font-size: 18px;
   
 }
 
 
-form button[type="submit"] {
-  width: 15%;
-  height: 10%;
-  font-family: "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+label {
+  display: inline-block;
+  width: 6em;
+  margin-right: .5em;
+  padding-top: 1.5em;
+  color: rgb(255, 255, 255);
+}
+
+
+.homepage1-img{
+
+  width: 100%;
+  margin-top: 3%;
+
+}
+
+.hp-img-1-text{
+
+  font-family: "Quadrat", serif;
+  font-size: 1.5rem;
+  display: inline-block;
+  margin-top: 500px;
+  margin-left: -1200px;
+  color:rgb(20, 19, 19);
+  z-index: 100;
+  position: relative;
+
+}
+
+.get-ideas-link{
+  color: #fff;
+  background-color: black;
+  margin-left: 40%;
+  padding: 1.3%;
+  width:7%;
+  height:45px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
   font-size: 14px;
-  line-height: 1.75;
-  color: white;
-  border: none; /* Remove the default border */
-  border-radius: .5rem;
-  background: linear-gradient(#090a0a, #0b0c0c);
-  box-shadow: 
-      inset 0 1px 0 rgba(255,255,255,0.3),
-      0 1px 2px rgba(0,0,0,0.35),
-      inset 0 3px 2px rgba(255,255,255,0.2),
-      inset 0 -3px 2px rgba(0,0,0,0.1);
-
-  cursor: pointer;
-  border-radius: 25px;
-  padding: 9px 20px;
-  font-stretch: normal;
-  font-style:normal;
-  white-space: nowrap;
-  font-weight: 600;
-  justify-content: center;
+  display:flex;
   align-items: center;
-  margin-top: 2%;
-  width: 40%;
+  margin-top: -138px;
+  text-align: 52%;
 }
 
-
-.sign-in-button{
-
-color: #fff;
-background-color: black;
-margin-left: 73%;
-padding: 1.3%;
-width:6%;
-height:45px;
-font-family:Verdana, Geneva, Tahoma, sans-serif;
-font-size: 14px;
-display:flex;
-align-items: center;
-margin-top: -70px;
-text-align: center;
-
-}
-
-
-
-.sign-up-button{
-
-color: #fff;
-background-color: black;
-margin-left: 80%;
-padding: 1.3%;
-width:6%;
-height:45px;
-font-family:Verdana, Geneva, Tahoma, sans-serif;
-font-size: 14px;
-display:flex;
-align-items: center;
-margin-top: -51px;
-text-align: center;
+.find-professionals-link{
+  color: #fff;
+  background-color: black;
+  margin-left: 49%;
+  padding: 1.3%;
+  width: 10%;
+  height:45px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
+  display:flex;
+  align-items: center;
+  margin-top: -50px;
+  text-align: center;
 
 }
 
+.logout-button{
+  color: #fff;
+  background-color: black;
+  margin-left: 85%;
+  padding: 1.3%;
+  width:6%;
+  height:45px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
+  display:flex;
+  align-items: center;
+  margin-top: -50px;
+  text-align: center;
 
+}

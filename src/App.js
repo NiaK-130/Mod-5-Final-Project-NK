@@ -12,7 +12,7 @@ import {
 
 } from 'react-router-dom'
 
-function App(login, signup) {
+function App() {
 
     const production = "https://latest-modular-backend.herokuapp.com/"
     const development = "http://localhost:3002/"
@@ -114,10 +114,18 @@ function App(login, signup) {
 {loggedIn ?
 <Router>
   <nav className="navbar-container">
-    {user ? <img src={user.avatar} alt="you"/> : ''}
-    <Link className="links" to="/">Home</Link>
-    <Link className="links" to="/">Dashboard</Link>
-    <button className="logout" onClick={logout}>Logout</button>
+  <img className="logo-img" src={process.env.PUBLIC_URL + '/logo.png'} alt="modular-logo" />
+  <hr></hr>
+    {user ? <h2> {user.avatar} </h2>  : ''}
+    <header>
+    <Link to="/ideasdisplay">
+      <button className="get-ideas-link" > Get Ideas </button>
+      </Link> 
+    <Link to="/professionalsdisplay">
+      <button className="find-professionals-link" > Find Professionals </button>
+      </Link>
+    <button className="logout-button" onClick={logout}>Logout</button>
+    </header>
   </nav>
       <Route exact path="/">
         <Home currentUser={user}/>
@@ -129,7 +137,8 @@ function App(login, signup) {
         <Profile/>
       </Route>
 </Router> :
-<MainPage/>
+
+<MainPage login={login} signup={signup}/>
 
 
 }
@@ -139,12 +148,11 @@ function App(login, signup) {
   );
 }
 
-
-
-
 export default App;
 
-
+{/* <Link to="/login">
+<button className="sign-in-button" > Sign In </button>
+</Link> */}
 
 
 //     <div className="app">
