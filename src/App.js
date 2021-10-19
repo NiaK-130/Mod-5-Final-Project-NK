@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 // import Signup from './components/Signup.js';
 import Home from './components/Home';
 import Dashboard from './components/Dashboard';
-import LoginPage from "./components/LoginPage"
+import MainPage from "./components/MainPage";
 import Profile from './components/Profile';
 import {
   BrowserRouter as Router,
@@ -12,7 +12,7 @@ import {
 
 } from 'react-router-dom'
 
-function App() {
+function App(login, signup) {
 
     const production = "https://latest-modular-backend.herokuapp.com/"
     const development = "http://localhost:3002/"
@@ -100,7 +100,6 @@ function App() {
         })
       }
     
-      // console.log("hi" + user.user.username)
     
       function logout() {
         localStorage.clear()
@@ -110,6 +109,43 @@ function App() {
     
 
   return (
+
+<div className="App">
+{loggedIn ?
+<Router>
+  <nav className="navbar-container">
+    {user ? <img src={user.avatar} alt="you"/> : ''}
+    <Link className="links" to="/">Home</Link>
+    <Link className="links" to="/">Dashboard</Link>
+    <button className="logout" onClick={logout}>Logout</button>
+  </nav>
+      <Route exact path="/">
+        <Home currentUser={user}/>
+      </Route>
+      <Route exact path="/dashboard">
+        <Dashboard/>
+      </Route>
+      <Route exact path="/profile">
+        <Profile/>
+      </Route>
+</Router> :
+<MainPage/>
+
+
+}
+</div>
+
+
+  );
+}
+
+
+
+
+export default App;
+
+
+
 
 //     <div className="app">
 
@@ -150,35 +186,3 @@ function App() {
 //       }
 
 //     </div>
-
-<div className="App">
-{loggedIn ?
-<Router>
-  <nav className="navbar-container">
-    {user ? <img src={user.avatar} alt="you"/> : ''}
-    <Link className="links" to="/">Home</Link>
-    <Link className="links" to="/">Dashboard</Link>
-    <button className="logout" onClick={logout}>Logout</button>
-  </nav>
-      <Route exact path="/">
-        <Home currentUser={user}/>
-      </Route>
-      <Route exact path="/play">
-        <Dashboard/>
-      </Route>
-      <Route exact path="/your_stuff">
-        <Profile/>
-      </Route>
-</Router> :
-<LoginPage login={login} signup={signup}/>
-}
-</div>
-
-
-  );
-}
-
-
-
-
-export default App;
