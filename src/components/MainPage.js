@@ -14,16 +14,11 @@ export default function MainPage({ login, signup }) {
 
         <div>
 
-
-
-
                 <div>
 
                 <img className="logo-img" src={process.env.PUBLIC_URL + '/logo.png'} alt="modular-logo" />
 
                 <div>
-
-
 
                     <Router>
 
@@ -38,9 +33,6 @@ export default function MainPage({ login, signup }) {
                                 <button className="sign-up-button"> Sign Up </button>
                             </Link>
 
-
-
-
                         </div>
 
                         <Route exact path="/login">
@@ -52,18 +44,16 @@ export default function MainPage({ login, signup }) {
                             <Signup signup={signup} />
                         </Route>
 
-                    </Router>
+                    </Router> 
 
                     <div>
-
-
                         <img className="homepage1-img" src={process.env.PUBLIC_URL + '/homebanner1.png'} alt="modular-logo" />
                         <h1 className="hp-img-1-text"> Find Inspiration</h1>
                     </div>
 
-
-
                 </div>
+
+
 
 
 

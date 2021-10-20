@@ -11,6 +11,7 @@ import {
   Link, Route
 
 } from 'react-router-dom'
+import Ideasdisplay from './components/Ideasdisplay';
 
 function App() {
 
@@ -115,8 +116,9 @@ function App() {
 <Router>
   <nav className="navbar-container">
   <img className="logo-img" src={process.env.PUBLIC_URL + '/logo.png'} alt="modular-logo" />
+  
   <hr></hr>
-    {user ? <h2> {user.avatar} </h2>  : ''}
+    
     <header>
     <Link to="/ideasdisplay">
       <button className="get-ideas-link" > Get Ideas </button>
@@ -124,21 +126,31 @@ function App() {
     <Link to="/professionalsdisplay">
       <button className="find-professionals-link" > Find Professionals </button>
       </Link>
+      <Link to="/dashboard">
+      <button className="dashboard-link" > Dashboard </button>
+      </Link>
+
+
+
     <button className="logout-button" onClick={logout}>Logout</button>
     </header>
   </nav>
-      <Route exact path="/">
-        <Home currentUser={user}/>
+       <Route exact path="/login">
+        <Dashboard  />
+
+        {/* {user ? <h2 classname = "hello-user-text"> Hello {user.avatar} </h2>  : ''} */}
+      </Route>
+
+      <Route exact path="/ideasdisplay">
+        <Ideasdisplay/>
+        
       </Route>
       <Route exact path="/dashboard">
-        <Dashboard/>
-      </Route>
-      <Route exact path="/profile">
-        <Profile/>
+        <Dashboard />
       </Route>
 </Router> :
 
-<MainPage login={login} signup={signup}/>
+<MainPage login={login} signup={signup} />
 
 
 }
@@ -194,3 +206,6 @@ export default App;
 //       }
 
 //     </div>
+
+
+{/* <Home currentUser={user}/> */}

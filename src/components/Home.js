@@ -7,15 +7,24 @@ function Home() {
 
     return (
         <div>
-            <Header />
-            <NavBar />
-            <h1>Welcome to Modular</h1>
-            <Link 
+            {/* <Header />
+            <NavBar /> */}
+            {/* <h1>Welcome to Modular</h1> */}
+            {/* <Link 
                 exact to="/dashboard"
                 className="home-dashboard-link" 
             >
                 Get Started
-            </Link>
+            </Link> */}
+            
+
+
+
+
+
+
+
+
         </div>
     )
 }

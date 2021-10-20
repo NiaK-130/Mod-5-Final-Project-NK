@@ -3,7 +3,9 @@ import React from 'react'
 function Header() {
 
     return (
-        <h1>Modular</h1>
+        <div>
+        <h1></h1>
+        </div>
     )
 }
 

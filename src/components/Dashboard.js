@@ -1,14 +1,18 @@
 import React from 'react'
 import Header from './Header'
 import NavBar from './NavBar'
+import { Link } from 'react-router-dom'
 
-function Dashboard({ lyrics }) {
+function Dashboard() {
 
     return (
-        <div>
-            <Header />
-            <NavBar />
+        <div className = "dashboard-div">
+
+            <h1>Welcome User  </h1>
           
+           
+            
+
         </div>
     )
 }

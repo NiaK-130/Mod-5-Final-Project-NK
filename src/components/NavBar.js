@@ -5,7 +5,7 @@ function NavBar() {
 
     return (
         <div>
-            <NavLink 
+            {/* <NavLink 
                 className="nav-link" 
                 exact to="/home">
                 Home
@@ -21,7 +21,7 @@ function NavBar() {
                 className="nav-link"
                 exact to="/profile">
                 Profile
-            </NavLink>
+            </NavLink> */}
         </div>
     )
 }

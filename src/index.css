@@ -234,14 +234,14 @@ label {
   font-size: 14px;
   display:flex;
   align-items: center;
-  margin-top: -138px;
+  margin-top: -90px;
   text-align: 52%;
 }
 
 .find-professionals-link{
   color: #fff;
   background-color: black;
-  margin-left: 49%;
+  margin-left: 48%;
   padding: 1.3%;
   width: 10%;
   height:45px;
@@ -250,6 +250,23 @@ label {
   display:flex;
   align-items: center;
   margin-top: -50px;
+  text-align: center;
+
+}
+
+.dashboard-link{
+
+  color: #fff;
+  background-color: black;
+  margin-left: 59%;
+  padding: 1.3%;
+  width: 7%;
+  height:45px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
+  display:flex;
+  align-items: center;
+  margin-top: -51px;
   text-align: center;
 
 }
@@ -269,3 +286,25 @@ label {
   text-align: center;
 
 }
+
+.dashboard-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 13%;
+}
+
+
+#picture {
+
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 50px;
+  width: 80%;
+  border: 1px solid grey;
+  border-radius: 20px;
+
+}
+
+
