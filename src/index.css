@@ -295,16 +295,5 @@ label {
 }
 
 
-#picture {
-
-  display: flex;
-  flex-direction: column;
-  margin: 10px;
-  padding: 50px;
-  width: 80%;
-  border: 1px solid grey;
-  border-radius: 20px;
-
-}
 
 
