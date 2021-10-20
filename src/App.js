@@ -12,6 +12,7 @@ import {
 
 } from 'react-router-dom'
 import Ideasdisplay from './components/Ideasdisplay';
+import axios from 'axios';
 
 function App() {
 
@@ -22,6 +23,31 @@ function App() {
 
     const [loggedIn, setLoggedIn] = useState(false)
     const [user, setUser] = useState()
+
+    const [images, setImages] = useState([]);
+
+    useEffect(() => {
+      const apiRoot = "https://api.unsplash.com";
+      const accessKey = process.env.REACT_APP_ACCESSKEY;
+  
+         axios
+         .get(`${apiRoot}/search/photos?query=home-interior&client_id=${accessKey}&count=40`)
+      .then(res => setImages([...images, ...res.data.results]))
+      }, [])
+
+
+        //  axios
+      // .get(`${apiRoot}/search/photos?query=home-interior&client_id=${accessKey}&count=30`)
+      // .then(res => setImages([...images, ...res.data]))
+      // }, [])
+
+      
+        // .get(`${apiRoot}/search/photos?query=home-interior&client_id=${accessKey}&count=10`)
+      //.get(`${apiRoot}/photos/random?client_id=${accessKey}&count=10`)
+      //get(`${apiRoot}/photos?query=interior-design&client_id=${accessKey}&count=30`)
+  
+    
+
 
     useEffect(() => {
       const token = localStorage.getItem("jwt");
@@ -148,12 +174,30 @@ function App() {
       <Route exact path="/dashboard">
         <Dashboard />
       </Route>
+
+      <div>
+      {
+        images.map(image => (
+
+          <Ideasdisplay url = {image.urls.regular} key={image.id}/>
+
+        ))
+
+      }
+
+    </div>
+
+
+
+
 </Router> :
 
 <MainPage login={login} signup={signup} />
 
 
 }
+
+
 </div>
 
 
@@ -161,51 +205,3 @@ function App() {
 }
 
 export default App;
-
-{/* <Link to="/login">
-<button className="sign-in-button" > Sign In </button>
-</Link> */}
-
-
-//     <div className="app">
-
-// {loggedIn ?
-  
-//  <Router>
-
-      
-
-//       <Route exact path="/">
-//             <SigninHome />
-//           </Route>
-
-//           <Route exact path="/login">
-//             <Login />
-//           </Route>
-
-//           <Route exact path="/home">
-//             <Home />
-//           </Route>
-
-//           <Route exact path="/">
-//               <Home currentUser={user}/>
-//             </Route>
-
-//           <Route exact path="/dashboard">
-//             <Dashboard
-//             />
-//           </Route> 
-
-//           <Route exact path="/profile">
-//             <Profile />
-//           </Route>
-
-//     </Router> :
-
-//       <LoginPage login={login} signup={signup}/>
-//       }
-
-//     </div>
-
-
-{/* <Home currentUser={user}/> */}
