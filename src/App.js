@@ -31,7 +31,7 @@ function App() {
       const accessKey = process.env.REACT_APP_ACCESSKEY;
   
          axios
-         .get(`${apiRoot}/search/photos?query=home-interior&client_id=${accessKey}&count=40`)
+         .get(`${apiRoot}/search/photos?query=interior&client_id=${accessKey}`)
       .then(res => setImages([...images, ...res.data.results]))
       }, [])
 
@@ -167,14 +167,16 @@ function App() {
         {/* {user ? <h2 classname = "hello-user-text"> Hello {user.avatar} </h2>  : ''} */}
       </Route>
 
-      <Route exact path="/ideasdisplay">
-        <Ideasdisplay/>
-        
-      </Route>
+     
       <Route exact path="/dashboard">
         <Dashboard />
       </Route>
 
+
+      <Route exact path="/ideasdisplay">
+        <Ideasdisplay/>
+        
+      
       <div>
       {
         images.map(image => (
@@ -186,6 +188,8 @@ function App() {
       }
 
     </div>
+
+    </Route>
 
 
 
