@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Header from './Header'
-import NavBar from './NavBar'
+
 
 function Home() {
 
@@ -16,7 +16,7 @@ function Home() {
             >
                 Get Started
             </Link> */}
-            
+
 
 
 

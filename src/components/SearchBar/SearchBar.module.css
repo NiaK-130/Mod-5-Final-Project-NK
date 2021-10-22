@@ -1,0 +1,37 @@
+.input-control{
+    min-width: 320px;
+    margin-top: 100px;
+    
+    
+    
+}
+
+.input-control-head{
+    margin-top: 100px;
+    display: flex;
+    
+    
+}
+
+.input-div{
+    display: flex;
+    align-items: flex-start;
+
+
+}
+
+
+
+:global(.button).search-button{
+    background: rgb(214, 227, 215);
+    min-width: 120px;
+    border: none;
+    margin-top: 100px;
+
+}
+
+:global(.icon).search-icon{
+    color: black;
+    font-family: sans-serif;
+    
+}
