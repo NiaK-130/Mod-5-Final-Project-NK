@@ -2,16 +2,16 @@ import React from 'react';
 import {SearchBar} from '../SearchBar/SearchBar'
 import { SearchSuggestions } from './SearchSuggestions/SearchSuggestions';
 import styles from './Professionalsdisplay.module.css';
-import  {Router} from 'react-router-dom';
+import  {Route, Router, Link} from 'react-router-dom';
 
 export function Professionalsdisplay(){
-    // const {history} = Router();
-    // const encodeURI = encodeURIComponent("&")
+    // const history = Router();
+    const encodeURI = encodeURIComponent("&")
 
     function search(term, location){
-        // const urlEncodedTerm = encodeURI(term);
-        // const urlEncodedLocation = encodeURI(location);
-        // history.push(`/search?find_desc=${urlEncodedTerm}&find_loc=${urlEncodedLocation}`);      
+        const urlEncodedTerm = encodeURI(term);
+        const urlEncodedLocation = encodeURI(location);
+        const url = `/search?find_desc=${urlEncodedTerm}&find_loc=${urlEncodedLocation}`;      
     }
 
     return (
@@ -20,17 +20,25 @@ export function Professionalsdisplay(){
         <SearchBar search={search} />
         <SearchSuggestions/>
 
+        <div>
+        <Link to="/search">
+             <button> Search </button>
+        </Link>
+
+        </div>
+
         </div>
         
-    
-     
+        <Route exact path="\search">
+            <Professionalsdisplay search={search}/>
 
+
+        </Route>
+    
+    
         </div>
 
     );
-
-
-
 
 }
 
