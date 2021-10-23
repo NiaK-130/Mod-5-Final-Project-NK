@@ -15,6 +15,7 @@ import Ideasdisplay from './components/Ideasdisplay';
 import axios from 'axios';
 import { Professionalsdisplay } from './components/Professional-Landing-page/Professionalsdisplay';
 import {Search} from './components/Search/Search';
+import styles from './App.module.css'
 
 
 function App() {

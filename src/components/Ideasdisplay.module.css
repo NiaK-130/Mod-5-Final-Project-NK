@@ -4,7 +4,10 @@
     display: flex;
     justify-content: center;
     width:30%;
-    height:20%;
+    height:30%;
+    object-fit: cover;
+    margin-top:10%;
+    margin-left:10%;
   
   }
   

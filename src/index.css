@@ -57,7 +57,7 @@ code {
   
 .signin-box{
 
-  background-color: #5e0c69;
+  background-color: #3d2f2f;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -72,7 +72,7 @@ code {
 
 .signup-box{
 
-  background-color: #23a34e;
+  background-color: #504f4f;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -85,7 +85,7 @@ code {
 }
 
 .sign-in-text{
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-weight: bolder;
   font-feature-settings: "abvf";
   font-size: 35px;
@@ -94,7 +94,7 @@ code {
 }
 
 .sign-up-text{
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-weight: bolder;
   font-feature-settings: "abvf";
   font-size: 35px;
@@ -110,6 +110,7 @@ code {
   height: 2.4375rem;
   margin-top:15%;
   color: rgb(255, 255, 255);
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   
 }
 
@@ -121,12 +122,14 @@ code {
   height: 2.4375rem;
   margin-top:10%;
   color: rgb(255, 255, 255);
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 }
 
 .email-header{
   font-size: 18px;
   font-weight: bold;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 }
 
@@ -134,18 +137,21 @@ code {
 .sign-up-header{
   font-size: 18px;
   font-weight: bold;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 }
 
 .password-header{
   font-size: 18px;
   font-weight: bold;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 }
 
 ::placeholder{
   color: rgb(252, 246, 246);
   font-size: 15px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .sign-up-password{
@@ -156,6 +162,7 @@ code {
   height: 2.4375rem;
   margin-top:8%;
   color: rgb(255, 255, 255);
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 }
 
@@ -167,6 +174,7 @@ code {
   height: 2.4375rem;
   margin-top:15%;
   color: rgb(255, 255, 255);
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .sign-in-page-button{
@@ -178,6 +186,7 @@ code {
   color: rgb(255, 255, 255);
   font-weight: bolder;
   font-size: 18px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   
 }
 
@@ -190,6 +199,7 @@ code {
   color: rgb(255, 254, 254);
   font-weight: bolder;
   font-size: 18px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   
 }
 

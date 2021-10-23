@@ -1,0 +1,28 @@
+
+.homepageimagethree{
+    margin-top: 49%;
+    margin-left:0%;
+    
+
+}
+
+.homepagethree{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 3.5rem;
+    color:rgb(144, 142, 142);
+    font-weight: bolder;
+    margin-top: -16%;
+    margin-left:22%;
+
+}
+
+.homepagetextthree{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 4rem;
+    color:rgb(144, 142, 142);
+    font-weight: bolder;
+    margin-top: -40%;
+    margin-left:70%;
+    font-stretch: ultra-expanded;
+
+}

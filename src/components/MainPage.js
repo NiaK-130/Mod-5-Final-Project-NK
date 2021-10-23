@@ -5,65 +5,68 @@ import {
     BrowserRouter as Router,
     Link, Switch, Route
 
-} from 'react-router-dom'
+} from 'react-router-dom';
+import styles from './MainPage.module.css';
+import logo from '../assets/logo.png';
+import homepagemoduleone from '../assets/homepagemoduleone.png';
+import homepagemoduletwo from '../assets/homepagemoduletwo.png';
+import homepagemodulethree from '../assets/homepagemodulethree.png';
+import { HomePageOne } from './HomePage/HomePageOne';
+import { HomePageTwo } from './HomePage/HomePageTwo';
+import { HomePageThree } from './HomePage/HomePageThree';
 
 
 export default function MainPage({ login, signup }) {
 
     return (
-
         <div>
-
+               <div>
+                {/* <img className="logo-img" src={process.env.PUBLIC_URL + '/logo.png'} alt="modular-logo" /> */}
+                {/* <img src={logo} className={styles.logo} alt='logo'/> */}
                 <div>
-
-                <img className="logo-img" src={process.env.PUBLIC_URL + '/logo.png'} alt="modular-logo" />
-
-                <div>
-
-                    <Router>
-
-                        <div>
-
-                            <Link to="/login">
-                                <button className="sign-in-button" > Sign In </button>
-                            </Link>
-
-
-                            <Link to="/signup">
-                                <button className="sign-up-button"> Sign Up </button>
-                            </Link>
-
+                 <Router>
+                     <div className={styles.mainpagebuttons}>
+                             <div className={styles.left}>
+                                     <img src={logo} className={styles.logo} alt='logo'/>
+                            </div>
+                            <div className={styles.right}>
+                                    <Link to="/login">
+                                    <button className="button is-medium">Sign In </button>
+                                        {/* <button className="sign-in-button" > Sign In </button> */}
+                                    </Link>
+                                    <Link to="/signup">
+                                    <button className="button is-medium"> Sign Up </button>
+                                        {/* <button className="sign-up-button"> Sign Up </button> */}
+                                    </Link>
+                            </div>
                         </div>
-
                         <Route exact path="/login">
                             <Login login={login} />
                         </Route>
-
-
                         <Route exact path="/signup">
                             <Signup signup={signup} />
                         </Route>
-
-                    </Router> 
-
+                    
                     <div>
-                        <img className="homepage1-img" src={process.env.PUBLIC_URL + '/homebanner1.png'} alt="modular-logo" />
-                        <h1 className="hp-img-1-text"> Find Inspiration</h1>
+                        <Route exact path="/">
+                       <HomePageOne homepagemoduleone={homepagemoduleone} />
+                       </Route>
                     </div>
-
+                    <div>
+                        <Route exact path="/">
+                       <HomePageTwo homepagemoduletwo={homepagemoduletwo} />
+                       </Route>
+                    </div>
+                    <div>
+                        <Route exact path="/">
+                       <HomePageThree homepagemodulethree={homepagemodulethree} />
+                       </Route>
+                    </div>
+                    </Router> 
                 </div>
-
-
-
-
-
-
             </div>
-
         </div>
 
-
     )
-
 }
 
