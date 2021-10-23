@@ -23,6 +23,7 @@ export function SearchBar(props) {
                     <input className={`input ${styles[`input-control`]}`} 
                     onChange={(e) => setTerm(e.target.value)}
                     type="text" 
+                    value={term}
                     placeholder="architects, builders..." 
                     />
                 </p>
@@ -33,6 +34,7 @@ export function SearchBar(props) {
                     <input className={`input ${styles[`input-control`]}`}
                     onChange={(e) => setLocation(e.target.value)} 
                     type="text" 
+                    value={location}
                     placeholder="location" 
                     />
                 </p>

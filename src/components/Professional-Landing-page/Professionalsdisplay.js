@@ -2,16 +2,17 @@ import React from 'react';
 import {SearchBar} from '../SearchBar/SearchBar'
 import { SearchSuggestions } from './SearchSuggestions/SearchSuggestions';
 import styles from './Professionalsdisplay.module.css';
-import  {Route, Router, Link} from 'react-router-dom';
+import useReactRouter from 'use-react-router';
+// import  {Route, Router, Link} from 'react-router-dom';
+
 
 export function Professionalsdisplay(){
-    // const history = Router();
-    const encodeURI = encodeURIComponent("&")
+    const {history} = useReactRouter();
 
     function search(term, location){
         const urlEncodedTerm = encodeURI(term);
         const urlEncodedLocation = encodeURI(location);
-        const url = `/search?find_desc=${urlEncodedTerm}&find_loc=${urlEncodedLocation}`;      
+        history.push(`/search?find_desc=${urlEncodedTerm}&find_loc=${urlEncodedLocation}`);      
     }
 
     return (
@@ -20,7 +21,9 @@ export function Professionalsdisplay(){
         <SearchBar search={search} />
         <SearchSuggestions/>
 
-        <div>
+        </div>
+
+        {/* <div>
         <Link to="/search">
              <button> Search </button>
         </Link>
@@ -33,7 +36,7 @@ export function Professionalsdisplay(){
             <Professionalsdisplay search={search}/>
 
 
-        </Route>
+        </Route> */}
     
     
         </div>
@@ -43,29 +46,3 @@ export function Professionalsdisplay(){
 }
 
 
-
-// <Router>
-
-// <div>
-
-//     <Link to="/login">
-//         <button className="sign-in-button" > Sign In </button>
-//     </Link>
-
-
-//     <Link to="/signup">
-//         <button className="sign-up-button"> Sign Up </button>
-//     </Link>
-
-// </div>
-
-// <Route exact path="/login">
-//     <Login login={login} />
-// </Route>
-
-
-// <Route exact path="/signup">
-//     <Signup signup={signup} />
-// </Route>
-
-// </Router> 
