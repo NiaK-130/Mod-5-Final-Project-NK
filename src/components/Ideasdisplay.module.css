@@ -10,6 +10,47 @@
     margin-left:1%;
   
   }
+
+  /* .image-container{
+   
+    position: relative;
+    transition: transform 0.2s;
+
+
+  }
+
+    :hover {
+      cursor:pointer;
+      transform: scale(1.008);
+    }  */
+
+    /* .image-container:hover .image-overlay{
+      opacity: 1;
+    }
+
+
+    .image-overlay{
+      position: absolute;
+      background: (0, 0, 0, 0.8);
+      width: 100%;
+      transition: 0.5s ease;
+      opacity: 0;
+      bottom:0;
+      font-size: 20px;
+      padding:20px;
+      text-align: center;
+
+    } */
+
+
+    /* .unsplash-img{
+      display: flex;
+      justify-content: center;
+      width:140%;
+      height:120%;
+      object-fit: cover;
+      margin-top:-2%;
+      margin-left:1%;
+    
+    } */
   
-
-

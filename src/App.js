@@ -28,13 +28,27 @@ const GlobalStyle = createGlobalStyle`
       margin: 0;
       padding:0;
       box-sizing: border-box;
-
+        // position: relative;
+        // transition: transform 0.2s;
+    
+ 
+      
+      
 }
+
+// :hover {
+//   cursor:pointer;
+//   transform: scale(1.008);
+// } 
+
+
 
 body{
   font-family: san-serif;
 }
 `;
+
+
 
 const WrapperImage = styled.section`
   max-width: 70rem;
@@ -43,6 +57,7 @@ const WrapperImage = styled.section`
   grid-gap: 1em;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-auto-rows: 300px;
+
 
 `;
 
@@ -272,14 +287,17 @@ function App() {
 
             <GlobalStyle/>
             <WrapperImage>
+
+           
              
               {result.map((image) => (
 
                   <Ideasdisplay url={image.urls.regular} key={image.id} />
 
                 ))
-
               }
+         
+
             </WrapperImage>
 
            
