@@ -16,6 +16,35 @@ import axios from 'axios';
 import { Professionalsdisplay } from './components/Professional-Landing-page/Professionalsdisplay';
 import {Search} from './components/Search/Search';
 import styles from './App.module.css'
+import logo from '../src/assets/logo.png';
+import {Loader} from './components/Loader';
+import styled from 'styled-components';
+import {createGlobalStyle} from 'styled-components';
+import InfiniteScroll from 'react-infinite-scroll-component';
+
+
+const GlobalStyle = createGlobalStyle`
+* {
+      margin: 0;
+      padding:0;
+      box-sizing: border-box;
+
+}
+
+body{
+  font-family: san-serif;
+}
+`;
+
+const WrapperImage = styled.section`
+  max-width: 70rem;
+  margin: 4rem auto;
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 300px;
+
+`;
 
 
 function App() {
@@ -28,17 +57,46 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false)
   const [user, setUser] = useState()
 
-  const [images, setImages] = useState([]);
+  const [images, setImages] = useState("");
+  const [result, setResult] = useState([]);
+
+
 
   useEffect(() => {
+    fetchImages();
+   
+  }, [])
+
+  const fetchImages = () => {
+
     const apiRoot = "https://api.unsplash.com";
     const accessKey = process.env.REACT_APP_ACCESSKEY;
 
     axios
-      .get(`${apiRoot}/search/photos?query=interior&client_id=${accessKey}`)
-      .then(res => setImages([...images, ...res.data.results]))
-  }, [])
+      .get(`${apiRoot}/search/photos?per_page=30&query=`+images+`&client_id=${accessKey}&count=30`)
+      .then(res => {console.log(res);
+        setResult(res.data.results)
+      });
+        
+        // setResult([...images, ...res.data.results]))
+  
+  }
 
+
+
+  //axios
+  //.get(`${apiRoot}/search/photos?page=1&page=2&per_page=40&query=interior&client_id=${accessKey}&count=10`)
+  //.then(res => setImages([...images, ...res.data.results]))
+
+  // .get(`${apiRoot}/photos/random?client_id=${accessKey}&count=10`)
+  //.then(res => setImages([...images, ...res.data]))
+
+  // .get(`${apiRoot}/search/photos?page=1&page=2&per_page=40&query=interior&client_id=${accessKey}`)
+
+
+  // axios
+  // .get(`${apiRoot}/search/photos?query=home-interior&client_id=${accessKey}&count=40`)
+  // .then(res => setImages([...images, ...res.data.results]))
 
   //  axios
   // .get(`${apiRoot}/search/photos?query=home-interior&client_id=${accessKey}&count=30`)
@@ -139,61 +197,95 @@ function App() {
   }
 
 
+
+
+  function handleChange(event){
+    setImages(event.target.value);
+
+  }
+
+  function handleSubmit(event){
+    console.log(images);
+
+  }
+
+
   return (
 
     <div className="App">
       {loggedIn ?
         <Router>
           <nav className="navbar-container">
-            <img className="logo-img" src={process.env.PUBLIC_URL + '/logo.png'} alt="modular-logo" />
+            <div className={styles.appheaderbuttons}>
+                <div className={styles.left}> 
+                  <img src={logo} className={styles.logo} alt='logo'/>
+                </div>
+                
+                
 
+                <div className={styles.headerbuttons}>
+                    <Link to="/ideasdisplay">
+                      <button className="button is-normal" > Get Ideas </button>
+                    </Link>
+                    <Link to="/professionalsdisplay">
+                      <button className="button is-normal" > Find Professionals </button>
+                    </Link>
+                    <Link to="/dashboard">
+                      <button className="button is-normal" > Dashboard </button>
+                    </Link>
+                    <button className="button is-normal" onClick={logout}>Logout</button>
+                   
+                </div>
+
+            </div>
             <hr></hr>
-
-            <header>
-              <Link to="/ideasdisplay">
-                <button className="get-ideas-link" > Get Ideas </button>
-              </Link>
-              <Link to="/professionalsdisplay">
-                <button className="find-professionals-link" > Find Professionals </button>
-              </Link>
-              <Link to="/dashboard">
-                <button className="dashboard-link" > Dashboard </button>
-              </Link>
-
-
-
-              <button className="logout-button" onClick={logout}>Logout</button>
-            </header>
           </nav>
+
+
           <Route exact path="/login">
             <Dashboard />
-
-            {/* {user ? <h2 classname = "hello-user-text"> Hello {user.avatar} </h2>  : ''} */}
           </Route>
 
           <Route exact path="/dashboard">
             <Dashboard />
           </Route>
 
+          
 
+    
           <Route exact path="/ideasdisplay">
             <Ideasdisplay />
+            <div className={styles.ideasinputmain}>
+              <div className={styles.ideasinput}>
+                <input className = "input" onChange={handleChange} type="text" name="photo" placeholder="Search for Ideas"></input>
+              </div>
+              <div className={styles.ideasbutton}>
+                <button className = "button is-light" onClick={handleSubmit} type = "submit"> Find Inspiration!</button>
+              </div>
+            </div>
+            <InfiniteScroll dataLength={images.length}
+                next={fetchImages}
+                hasMore={true}
+                loader={<Loader/>}
+              
+               >
 
-
-            <div>
-              {
-                images.map(image => (
+            <GlobalStyle/>
+            <WrapperImage>
+             
+              {result.map((image) => (
 
                   <Ideasdisplay url={image.urls.regular} key={image.id} />
 
                 ))
 
               }
-            </div>
+            </WrapperImage>
 
            
-
+            </InfiniteScroll>
           </Route>
+         
 
           <Switch>
 
@@ -202,9 +294,8 @@ function App() {
         
                 <Route exact path="/professionalsdisplay" component={Professionalsdisplay}>
 
-                <Professionalsdisplay/>
+                    <Professionalsdisplay/>
             
-
                 </Route> 
 
           </Switch>
@@ -225,3 +316,6 @@ function App() {
 }
 
 export default App;
+
+
+//className={styles.unsplashimages}

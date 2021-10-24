@@ -5,14 +5,13 @@ import styles from './Ideasdisplay.module.css';
 
 
 
-function Ideasdisplay({url, key}) {
+function Ideasdisplay({url, key, }) {
 
 
 
     return (
-        <div className={styles['unsplash-img']}>
+        <div>
             <img src = {url} key={key} alt=""/>
-       
         </div>
     )
 }
@@ -20,4 +19,7 @@ function Ideasdisplay({url, key}) {
 
 
 export default Ideasdisplay
+
+
+//className={styles['unsplash-img']}
 

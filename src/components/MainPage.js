@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Login from './Login';
 import Signup from './Signup'
 import {
     BrowserRouter as Router,
-    Link, Switch, Route
+    Link, Route
 
 } from 'react-router-dom';
 import styles from './MainPage.module.css';

@@ -36,3 +36,75 @@
     transform: rotate(360deg);
   }
 }
+
+.logo{
+    width:28%;
+    height:10%;
+    margin-left:20%;
+    margin-top:1%;
+}
+
+.left > * {
+  margin-right: 1.5rem;
+}
+
+
+.appheaderbuttons{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5rem;
+   
+}
+
+.headerbuttons{
+  display: flex;
+  align-items: center;
+  margin-right: 15%;
+  margin-top: -2%;
+}
+
+.headerbuttons > * {
+  margin-left:1.5rem;
+}
+
+.unsplashimages{
+  max-width: 80rem;
+  margin: 2rem auto;
+  display: grid;
+  grid-gap: 8em;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 450px;
+
+
+}
+
+.ideasinputmain{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem;
+
+}
+
+.ideasbutton{
+  display: flex;
+  align-items: center;
+  margin-right: 27%;
+  margin-top: 3%;
+  font-weight: bolder;
+
+}
+
+
+.ideasbuttons > * {
+  margin-left:1.5rem;
+  
+}
+
+
+.ideasinput{
+  width:30%;
+  margin-left:38%;
+  margin-top:3%;
+}
