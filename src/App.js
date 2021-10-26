@@ -74,6 +74,7 @@ function App() {
   const [result, setResult] = useState([]);
 
   const [images, setImages] = useState([]);
+  console.log("this is images", images)
 
 
 
@@ -263,10 +264,11 @@ function App() {
     })
     .then((r) => r.json())
     .then(image => {
+      console.log("this is the images from app",images)
       setImages([...images, image])
       
 
-      console.log(image)
+      
     });
 
   }
