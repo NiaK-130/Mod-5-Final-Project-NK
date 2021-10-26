@@ -1,4 +1,7 @@
 import React from 'react'
+import styles from './AddFavourites.module.css';
+
+
 
 export const AddFavourites = () => {
     return (

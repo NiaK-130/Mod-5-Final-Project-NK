@@ -85,6 +85,7 @@
   align-items: center;
   margin: 1.5rem;
 
+
 }
 
 .ideasbutton{
@@ -109,3 +110,17 @@
   margin-top:3%;
 }
 
+.image-container{
+  position: relative;
+  transition: transform 0.2s;
+
+
+}
+
+  .image-container:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }  
+
+
+ 

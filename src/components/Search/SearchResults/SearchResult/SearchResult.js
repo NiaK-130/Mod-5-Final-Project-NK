@@ -18,9 +18,11 @@ export function SearchResult(props){
                 <BusinessRating reviewCount={props.business.review_count} rating={props.business.rating}/>
                 <p> {tags} </p>
                 </div>
+                <div className="contact-info-container">
                 <div className ={styles[`contact-info`]} >
                 <p>{props.business.phone}</p>
                 {addressLines}
+                </div>
             </div> 
         </div>
 

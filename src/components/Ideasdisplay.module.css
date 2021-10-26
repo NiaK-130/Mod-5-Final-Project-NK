@@ -11,18 +11,21 @@
   
   }
 
+  .image-page{
+    width: 100%;
+  }
+
   /* .image-container{
-   
     position: relative;
     transition: transform 0.2s;
 
 
   }
 
-    :hover {
-      cursor:pointer;
-      transform: scale(1.008);
-    }  */
+    .image-container:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }   */
 
     /* .image-container:hover .image-overlay{
       opacity: 1;

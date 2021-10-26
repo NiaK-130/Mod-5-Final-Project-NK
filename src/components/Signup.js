@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+
 
 export default function Signup({signup}) {  
 
@@ -61,6 +62,8 @@ export default function Signup({signup}) {
                     onChange={(e) => setAvatar(e.target.value)}
                 /> </label></p>
                 </div>
+
+       
 
                 <button className="sign-up-page-button" type="submit">Join now</button>
             </form>

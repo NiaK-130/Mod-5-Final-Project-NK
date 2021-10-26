@@ -3,7 +3,8 @@ import {SearchBar} from '../SearchBar/SearchBar'
 import { SearchSuggestions } from './SearchSuggestions/SearchSuggestions';
 import styles from './Professionalsdisplay.module.css';
 import useReactRouter from 'use-react-router';
-// import  {Route, Router, Link} from 'react-router-dom';
+
+
 
 
 export function Professionalsdisplay(){
@@ -17,9 +18,13 @@ export function Professionalsdisplay(){
 
     return (
         <div>
+            <img className="pdm-image" src={process.env.PUBLIC_URL + '/pdm1.png'} alt="modular-logo" />
+           
         <div className={styles[`search-area`]}> 
+
         <SearchBar search={search} />
         <SearchSuggestions/>
+        <img/>
 
         </div>
 

@@ -1,6 +1,6 @@
 .search-result{
     display: flex;
-    max-width: 1100px;
+    margin-left: 50%;
     width: 100%;
     
 
@@ -20,10 +20,20 @@
 }
 
 .contact-info p{
-    font-size:0.85rem;
-
+    font-size:18px;
+    
+    
 }
+
+.contact-info{
+    margin-left: 15%;
+}
+
+
+
+
 
 :global(.tag).business-tag{
     margin-right: 6px;
+    font-size: 15px;
 }

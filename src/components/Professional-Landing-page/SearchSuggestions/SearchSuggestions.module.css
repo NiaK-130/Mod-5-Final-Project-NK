@@ -8,12 +8,14 @@
     font-size: .0.75rem;
     margin-left: 4px;
     margin-right:2.5rem;
+    color: rgb(252, 252, 252);
 }
 
 .search-icon{
-    color: teal;
+    color: rgb(238, 238, 238);
     margin-left: 4px;
     margin-top:4px;
+   
 
 }
 

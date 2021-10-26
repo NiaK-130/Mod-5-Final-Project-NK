@@ -21,7 +21,7 @@ import {Loader} from './components/Loader';
 import styled from 'styled-components';
 import {createGlobalStyle} from 'styled-components';
 import InfiniteScroll from 'react-infinite-scroll-component';
-
+import {AddFavourites} from './components/AddFavourites';
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -31,8 +31,6 @@ const GlobalStyle = createGlobalStyle`
         // position: relative;
         // transition: transform 0.2s;
     
- 
-      
       
 }
 
@@ -65,57 +63,83 @@ const WrapperImage = styled.section`
 function App() {
 
   const production = "https://latest-modular-backend.herokuapp.com/"
-  const development = "http://localhost:3002/"
-  const url = (process.env.NODE_ENV ? production : development)
+  const development = "http://localhost:3000/"
+  const url = (process.env.NODE_ENV  === "production" ? production : development)
 
 
   const [loggedIn, setLoggedIn] = useState(false)
   const [user, setUser] = useState()
 
-  const [images, setImages] = useState("");
+  const [imagesAdd, setImagesAdd] = useState("");
   const [result, setResult] = useState([]);
 
+  const [images, setImages] = useState([]);
 
 
-  useEffect(() => {
-    fetchImages();
+
+  function handleChange(event){
+    setImagesAdd(event.target.value);
+
+  }
+
+
+   // useEffect(() => {
+  //   fetchImages();
    
-  }, [])
+  // }, [])
 
-  const fetchImages = () => {
+  // const fetchImages = () => {
+
+
+
+  function handleSubmit(event){
+    console.log(imagesAdd);
+
+  
+
+
+  // useEffect(() => {
+  //   fetchImages();
+   
+  // }, [])
+
+  // const fetchImages = () => {
 
     const apiRoot = "https://api.unsplash.com";
     const accessKey = process.env.REACT_APP_ACCESSKEY;
 
     axios
-      .get(`${apiRoot}/search/photos?per_page=30&query=`+images+`&client_id=${accessKey}&count=30`)
+      .get(`${apiRoot}/search/photos?per_page=100&query=`+imagesAdd+`&client_id=${accessKey}&count=30`)
       .then(res => {console.log(res);
         setResult(res.data.results)
       });
         
-        // setResult([...images, ...res.data.results]))
   
-  }
+//   }
 
+}
+
+//   }
+ 
 
 
   //axios
   //.get(`${apiRoot}/search/photos?page=1&page=2&per_page=40&query=interior&client_id=${accessKey}&count=10`)
-  //.then(res => setImages([...images, ...res.data.results]))
+  //.then(res => setImagesAdd([...imagesAdd, ...res.data.results]))
 
   // .get(`${apiRoot}/photos/random?client_id=${accessKey}&count=10`)
-  //.then(res => setImages([...images, ...res.data]))
+  //.then(res => setImagesAdd([...imagesAdd, ...res.data]))
 
   // .get(`${apiRoot}/search/photos?page=1&page=2&per_page=40&query=interior&client_id=${accessKey}`)
 
 
   // axios
   // .get(`${apiRoot}/search/photos?query=home-interior&client_id=${accessKey}&count=40`)
-  // .then(res => setImages([...images, ...res.data.results]))
+  // .then(res => setImagesAdd([...imagesAdd, ...res.data.results]))
 
   //  axios
   // .get(`${apiRoot}/search/photos?query=home-interior&client_id=${accessKey}&count=30`)
-  // .then(res => setImages([...images, ...res.data]))
+  // .then(res => setImagesAdd([...imagesAdd, ...res.data]))
   // }, [])
 
 
@@ -126,7 +150,7 @@ function App() {
 
 
 
-  useEffect(() => {
+  useEffect(() =>  {
     const token = localStorage.getItem("jwt");
     console.log("token: " + token)
     // console.log(user.user.username)
@@ -145,7 +169,7 @@ function App() {
         console.log("please log in")
       }
     });
-  });
+  }, []);
 
 
   function signup(username, password, bio, avatar) {
@@ -197,6 +221,7 @@ function App() {
           setUser(data.user)
           setLoggedIn(true)
           localStorage.setItem("jwt", data.jwt);
+          console.log(data.user)
         });
       } else {
         console.log("wrong username/password")
@@ -214,16 +239,41 @@ function App() {
 
 
 
-  function handleChange(event){
-    setImages(event.target.value);
+
+
+  function addImage(title, image, imageDesc, by, tags, tagstwo, tagsthree){
+
+    fetch(`${url}api/v1/images`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json", 
+        "Authorization": `Bearer ${localStorage.getItem("jwt")}`
+      },
+      body: JSON.stringify({
+        title: `${title}`,
+        image: `${image}`,
+        image_desc: `${imageDesc}`,
+        by: `${by}`,
+        tags: `${tags}`,
+        tagstwo: `${tagstwo}`,
+        tagsthree: `${tagsthree}`,
+        user_id: `${user.id}`,
+      }),
+
+    })
+    .then((r) => r.json())
+    .then(image => {
+      setImages([...images, image])
+      
+
+      console.log(image)
+    });
 
   }
 
-  function handleSubmit(event){
-    console.log(images);
 
-  }
-
+  //newimageform - title, image, imageDesc, by, tags, tagstwo, tagsthree
+  //migration params - :title, :image, :image_desc, :by, :tags, :tagstwo, :tagsthree, :user_id
 
   return (
 
@@ -245,24 +295,25 @@ function App() {
                     <Link to="/professionalsdisplay">
                       <button className="button is-normal" > Find Professionals </button>
                     </Link>
+
                     <Link to="/dashboard">
                       <button className="button is-normal" > Dashboard </button>
                     </Link>
-                    <button className="button is-normal" onClick={logout}>Logout</button>
-                   
+                    <button className="button is-normal" onClick={logout}>Logout</button>    
                 </div>
-
             </div>
-            <hr></hr>
+            
           </nav>
 
 
           <Route exact path="/login">
-            <Dashboard />
+            <Dashboard user={user} images={images} addImage={addImage}/>
           </Route>
 
           <Route exact path="/dashboard">
-            <Dashboard />
+            
+            <Dashboard user={user} images={images} addImage={addImage}/>
+            
           </Route>
 
           
@@ -270,16 +321,17 @@ function App() {
     
           <Route exact path="/ideasdisplay">
             <Ideasdisplay />
+            
             <div className={styles.ideasinputmain}>
               <div className={styles.ideasinput}>
                 <input className = "input" onChange={handleChange} type="text" name="photo" placeholder="Search for Ideas"></input>
               </div>
               <div className={styles.ideasbutton}>
-                <button className = "button is-light" onClick={handleSubmit} type = "submit"> Find Inspiration!</button>
+                <button className = "button is-light" onClick={handleSubmit} > Find Inspiration!</button>
               </div>
             </div>
-            <InfiniteScroll dataLength={images.length}
-                next={fetchImages}
+            <InfiniteScroll dataLength={imagesAdd.length}
+                // next={fetchImages}
                 hasMore={true}
                 loader={<Loader/>}
               
@@ -292,10 +344,10 @@ function App() {
              
               {result.map((image) => (
 
-                  <Ideasdisplay url={image.urls.regular} key={image.id} />
-
-                ))
-              }
+                  <Ideasdisplay url={image.urls.regular} key={image.id} favComponent={AddFavourites}/>
+                
+               
+                ))}
          
 
             </WrapperImage>
