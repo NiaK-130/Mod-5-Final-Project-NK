@@ -73,9 +73,34 @@ function App() {
   const [imagesAdd, setImagesAdd] = useState("");
   const [result, setResult] = useState([]);
 
-  const [images, setImages] = useState([]);
-  console.log("this is images", images)
+  const [imagesmain, setImagesMain] = useState([]);
+  console.log("this is images", imagesmain)
+  function addImage(title, image, imageDesc, by, tags, tagstwo, tagsthree){
 
+    fetch(`${url}api/v1/images`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json", 
+        "Authorization": `Bearer ${localStorage.getItem("jwt")}`
+      },
+      body: JSON.stringify({
+        title: `${title}`,
+        image: `${image}`,
+        image_desc: `${imageDesc}`,
+        by: `${by}`,
+        tags: `${tags}`,
+        tagstwo: `${tagstwo}`,
+        tagsthree: `${tagsthree}`,
+        user_id: `${user.id}`,
+      }),
+
+    })
+    .then((r) => r.json())
+    .then(imagepassed => {
+      console.log("this is the images from app",imagesmain)
+      setImagesMain([...imagesmain, imagepassed])
+    });
+  }
 
 
   function handleChange(event){
@@ -235,43 +260,29 @@ function App() {
     localStorage.clear()
     setUser(null)
     setLoggedIn(false)
+
   }
 
 
 
+  useEffect(() => {
+    const token = localStorage.getItem("jwt");
 
-
-
-  function addImage(title, image, imageDesc, by, tags, tagstwo, tagsthree){
-
-    fetch(`${url}api/v1/images`, {
-      method: "POST",
+    fetch(`${url}/api/v1/images`, {
+      method: "GET",
       headers: {
-        "Content-Type": "application/json", 
-        "Authorization": `Bearer ${localStorage.getItem("jwt")}`
+        Authorization: `Bearer ${token}`
       },
-      body: JSON.stringify({
-        title: `${title}`,
-        image: `${image}`,
-        image_desc: `${imageDesc}`,
-        by: `${by}`,
-        tags: `${tags}`,
-        tagstwo: `${tagstwo}`,
-        tagsthree: `${tagsthree}`,
-        user_id: `${user.id}`,
-      }),
-
     })
     .then((r) => r.json())
-    .then(image => {
-      console.log("this is the images from app",images)
-      setImages([...images, image])
-      
+    .then((imagesmain) => setImagesMain(imagesmain))
+  }, [])
 
-      
-    });
 
-  }
+
+
+
+  
 
 
   //newimageform - title, image, imageDesc, by, tags, tagstwo, tagsthree
@@ -309,12 +320,12 @@ function App() {
 
 
           <Route exact path="/login">
-            <Dashboard user={user} images={images} addImage={addImage}/>
+            <Dashboard user={user} imagesmain={imagesmain}/>
           </Route>
 
           <Route exact path="/dashboard">
             
-            <Dashboard user={user} images={images} addImage={addImage}/>
+            <Dashboard user={user} imagesmain={imagesmain}/>
             
           </Route>
 

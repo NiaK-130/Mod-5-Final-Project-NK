@@ -2,9 +2,9 @@ import React from "react";
 
 
 
-export default function ImageDisplay({images}) {
+export default function ImageDisplay({imagesmain}) {
 
-    console.log(images)
+    console.log(imagesmain)
 
     // function handleClick() {
     //     deleteStudent(student.id)
@@ -12,14 +12,14 @@ export default function ImageDisplay({images}) {
 
     return (
         <div className = "image-display-container" >
-            <img className = "image-base" src={images.image} alt={images.image}/>
+            <img className = "image-base" src={imagesmain.image} alt={imagesmain.image}/>
             <div className = "container-info">
-            <h2>{images.title}</h2>
-            <h4 className = "image-display-text" >Description: {images.image_desc} </h4> 
-            <h4 className = "image-display-text">Author: {images.by} </h4> 
-            <h4 className = "image-display-text">tags: {images.tags} </h4>  
-            <h4 className = "image-display-text">tags: {images.tagstwo} </h4>  
-            <h4 className = "image-display-text">tags: {images.tagsthree} </h4>  
+            <h2>{imagesmain.title}</h2>
+            <h4 className = "image-display-text" >Description: {imagesmain.image_desc} </h4> 
+            <h4 className = "image-display-text">Author: {imagesmain.by} </h4> 
+            <h4 className = "image-display-text">tags: {imagesmain.tags} </h4>  
+            <h4 className = "image-display-text">tags: {imagesmain.tagstwo} </h4>  
+            <h4 className = "image-display-text">tags: {imagesmain.tagsthree} </h4>  
             
             </div>
             <div > 

@@ -7,12 +7,10 @@ import ImageDisplay from './ImageDisplay';
 
 
 
-export default function Dashboard({images, addImage, user}) {
+export default function Dashboard({imagesmain, addImage, user}) {
 
 
     const [form, openCloseForm] = useState(false)
-    
-
 
     function handleClick(e){
         e.preventDefault()
@@ -54,8 +52,8 @@ export default function Dashboard({images, addImage, user}) {
             <div className = {styles.addimagebutton}>
                 <button className = "button is-light" onClick={handleClick}>Add Image</button>
             </div>
-            {form ? <NewImageForm images={images} addImage={addImage}/> : ' '}
-            {images.map((image) => <ImageDisplay  image={image} key={image.id}/>)}
+            {form ? <NewImageForm imagesmain={imagesmain} addImage={addImage}/> : ' '}
+            {/* {imagesmain.map((imagepassed) => <ImageDisplay  imagepassed={imagepassed} key={imagepassed.id}/>)} */}
             
         </div>
     )
