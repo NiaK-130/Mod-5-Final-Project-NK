@@ -6,15 +6,25 @@
     width:140%;
     height:120%;
     object-fit: cover;
-    margin-top:-2%;
+    margin-top:25%;
     margin-left:1%;
   
   }
 
-  .image-page{
-    width: 100%;
-  }
+ .pdm-image{
+   margin: center;
+ }
 
+
+ .getideastext{
+    
+  position: absolute;
+  margin-left: 45%;
+  margin-top: 1%;
+
+
+
+}
   /* .image-container{
     position: relative;
     transition: transform 0.2s;

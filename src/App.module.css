@@ -70,11 +70,12 @@
 
 .unsplashimages{
   max-width: 80rem;
-  margin: 2rem auto;
+  margin: 7rem auto;
   display: grid;
   grid-gap: 8em;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-auto-rows: 450px;
+  
 
 
 }
@@ -83,7 +84,8 @@
   display:flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1.5rem;
+  margin-top: -9%;
+  margin-left: -5%;
 
 
 }
@@ -91,15 +93,16 @@
 .ideasbutton{
   display: flex;
   align-items: center;
-  margin-right: 27%;
+  margin-right: 30%;
   margin-top: 3%;
   font-weight: bolder;
+ 
 
 }
 
 
 .ideasbuttons > * {
-  margin-left:1.5rem;
+  margin-left:1.2rem;
   
 }
 
@@ -123,4 +126,18 @@
   }  
 
 
- 
+  .getideastext{
+    
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index:100;
+  font-size: 35px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: grey;
+
+
+  }
+
+

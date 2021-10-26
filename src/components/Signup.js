@@ -43,9 +43,9 @@ export default function Signup({signup}) {
 
 
                 <div className = "sign-up-header">
-                <p><label> Confirmation:
+                <p><label> Profile Picture:
                 <input className = "sign-up-password"
-                    placeholder="password confirmation"
+                    placeholder="Add Profile Picture"
                     type="text"
                     value={bio}
                     onChange={(e) => setBio(e.target.value)}

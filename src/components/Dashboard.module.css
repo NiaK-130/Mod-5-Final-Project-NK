@@ -1,0 +1,51 @@
+.dash{
+    margin-left: -87%;
+    margin-top:-5%;
+    width:18%;
+    position: fixed;
+}
+
+.dashone{
+    margin-left: -87%;
+    margin-top:-9%;
+    width:18%;
+    position: fixed;
+
+}
+
+.hrline{
+    margin-top:-9.7%;
+    margin-left: 31%;
+    width:100%;
+    position: fixed;
+
+}
+
+.hrlineone{
+    margin-top:-9.7%;
+    margin-left: 45%;
+    width:100%;
+    position: fixed;
+    
+}
+
+.welcome{
+    margin-top: 7%;
+    margin-left:-73%;
+    transform: translate(-50%, -50%);
+    z-index:100;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 26px;
+
+}
+
+
+.profileimage{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  
+    object-fit: cover;
+    object-position: center right;
+}

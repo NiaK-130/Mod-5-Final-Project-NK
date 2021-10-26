@@ -22,6 +22,10 @@ export function Professionalsdisplay(){
            
         <div className={styles[`search-area`]}> 
 
+        <div className={styles.getideastext}>
+            <h2>Connect with Professionals, Build your dream!</h2>
+            </div>
+
         <SearchBar search={search} />
         <SearchSuggestions/>
         <img/>

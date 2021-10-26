@@ -34,13 +34,14 @@ function Ideasdisplay({url, key, favComponent}) {
 
     return (
         <div>
-            
+        <p>
                 <IdeasStyle/>
-                <div>
+                <span>
             <img src = {url} key={key} alt="" />
-            <div>  {favComponent}</div> 
-            </div>
+            <p>  {favComponent}</p> 
+            </span>
             
+            </p>
             </div>
     )
 }

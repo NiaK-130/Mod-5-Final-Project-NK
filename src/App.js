@@ -316,45 +316,51 @@ function App() {
             
           </Route>
 
+        
           
-
-    
           <Route exact path="/ideasdisplay">
             <Ideasdisplay />
+
+
+  <div className={styles.getideastext}>
+            <h2>Design Matters, Find your Inspiration! </h2>
+            </div>
+          
             
+            <div className="image">
+            <img className="pdm-image" src={process.env.PUBLIC_URL + '/imgwork.png'} alt="modular-logo" />
+            </div>
+
+           
+           
             <div className={styles.ideasinputmain}>
               <div className={styles.ideasinput}>
                 <input className = "input" onChange={handleChange} type="text" name="photo" placeholder="Search for Ideas"></input>
               </div>
               <div className={styles.ideasbutton}>
-                <button className = "button is-light" onClick={handleSubmit} > Find Inspiration!</button>
+                <button className = "button is-light" onClick={handleSubmit} > <i class="fas fa-search"></i></button>
               </div>
             </div>
             <InfiniteScroll dataLength={imagesAdd.length}
                 // next={fetchImages}
                 hasMore={true}
-                loader={<Loader/>}
-              
+                // loader={<Loader/>}  
                >
-
             <GlobalStyle/>
-            <WrapperImage>
-
-           
-             
+            <WrapperImage>           
               {result.map((image) => (
 
                   <Ideasdisplay url={image.urls.regular} key={image.id} favComponent={AddFavourites}/>
-                
-               
+                           
                 ))}
-         
-
+        
             </WrapperImage>
-
-           
+         
             </InfiniteScroll>
           </Route>
+
+         
+        
          
 
           <Switch>
