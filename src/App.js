@@ -299,6 +299,20 @@ function handleSubmit(event) {
   // }, []);
 
 
+
+  function deleteImage(imageToDelete) {
+
+
+    fetch(`images/${imageToDelete}`, {
+      method: "DELETE",
+    })
+      .then(() => setImagesMain(imagesmain.filter(imagepassed => imagepassed.id !== imageToDelete)));
+  }
+
+
+
+
+
   function addImage(title, image, imageDesc, by, tags, tagstwo, tagsthree) {
 
     fetch(`${url}api/v1/images`, {
@@ -376,12 +390,12 @@ function handleSubmit(event) {
 
 
           <Route exact path="/login">
-            <Dashboard user={user} imagesmain={imagesmain} addImage={addImage} />
+            <Dashboard user={user} imagesmain={imagesmain} addImage={addImage} deleteImage={deleteImage} />
           </Route>
 
           <Route exact path="/dashboard">
             
-            <Dashboard user={user} imagesmain={imagesmain} addImage={addImage} />
+            <Dashboard user={user} imagesmain={imagesmain} addImage={addImage} deleteImage={deleteImage} />
             
           </Route>
 

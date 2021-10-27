@@ -7,7 +7,7 @@ import ImageDisplay from './ImageDisplay';
 
 
 
-export default function Dashboard({imagesmain, addImage, user}) {
+export default function Dashboard({imagesmain, addImage, deleteImage, user}) {
 
 
     const [form, openCloseForm] = useState(false)
@@ -58,7 +58,7 @@ export default function Dashboard({imagesmain, addImage, user}) {
             {form ? <NewImageForm imagesmain={imagesmain} addImage={addImage}/> : ' '}
             
             {/* {imagesmain.map((imagepassed) => <ImageDisplay  imagepassed={imagepassed} key={imagepassed.id}/>)} */}
-            {imagesmain.map((image) => <ImageDisplay imagesmain={image}/>)}
+            {imagesmain.map((image) => <ImageDisplay imagesmain={image} deleteImage={deleteImage}/>)}
         </div>
     )
 }
