@@ -33,7 +33,7 @@ export default function Login({login}) {
             <p><label>Password :
               <input className = "login-password"
                     placeholder="password"
-                    type="text"
+                    type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 /> </label></p>

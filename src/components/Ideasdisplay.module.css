@@ -66,4 +66,23 @@
       margin-left:1%;
     
     } */
+
+    .imageoverlay{
+      position: relative;
+      transition: transform 0.2s;
+      
+    }
+
+
+    .imageoverlay:hover{
+      
+      
+    }
   
+  
+
+    element {
+      background: "rgba(255,255,255,0.9)";
+      background: "rgba(255,255,255,0.8)";
+      background: "rgba(255,0,0,0.3)";
+    }

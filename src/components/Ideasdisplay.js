@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react';
 import styles from './Ideasdisplay.module.css';
 import styled from 'styled-components';
 import {createGlobalStyle} from 'styled-components';
-import { AddFavourites } from './AddFavourites';
+
 
 
 
@@ -17,34 +17,41 @@ const IdeasStyle = createGlobalStyle`
     p:hover {
     cursor:pointer;
     transform: scale(1.5);
+    opacity:1
     } 
-
-    p:hover.AddtoFav {
-        opacity:1;
-        } 
-
 `;
 
 
 
+
+
 function Ideasdisplay({url, key, favComponent}) {
-    // const FavComponent = favComponent;
+    const FavComponent = favComponent;
 
 
 
     return (
         <div>
         <p>
-                <IdeasStyle/>
+   
+                <IdeasStyle />
                 <span>
+            <div>
             <img src = {url} key={key} alt="" />
-            <p>  {favComponent}</p> 
+            <p>  <FavComponent/> </p> 
+            </div>
+            
             </span>
             
             </p>
             </div>
     )
 }
+
+
+
+
+   
 
 
 

@@ -1,14 +1,28 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styles from './AddFavourites.module.css';
+import Heart from "react-heart";
 
 
 
-export const AddFavourites = () => {
+
+const AddFavourites = () => {
+
+    const [active, setActive] = useState(false)
     return (
-        <div>
-            <span className={`icon is-small ${styles['search-icon']}`}><i className="fas fa-heart"></i></span><span className={styles.favs}>Add to Favourites</span>
-        </div>
-    )
-}
+        <>
+            <div className={`icon is-small ${styles['search-icon']}`}>
+            <div style={{ width: "2rem" }}>
+			<Heart isActive={active} onClick={() => setActive(!active)}/>
+		</div>
+                    
+                    
+       
+                    </div>
+               
+        </>
+    );
+};
+
+export default AddFavourites
 
 

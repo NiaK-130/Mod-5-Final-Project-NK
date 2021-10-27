@@ -35,7 +35,7 @@ export default function Signup({signup}) {
                 <p><label>Password :
                 <input className = "sign-up-password"
                     placeholder="password"
-                    type="text"
+                    type="password"
                     value={newPassword}
                     onChange={(e) => setNewPassword(e.target.value)}
                 />  </label></p>

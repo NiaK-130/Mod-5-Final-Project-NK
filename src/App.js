@@ -34,9 +34,9 @@ import {
   createGlobalStyle
 } from 'styled-components';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import {
+import 
   AddFavourites
-} from './components/AddFavourites';
+ from './components/AddFavourites';
 
 const GlobalStyle = createGlobalStyle `
 * {
@@ -60,6 +60,20 @@ body{
 font-family: san-serif;
 }
 `;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -89,6 +103,7 @@ function App() {
   const [result, setResult] = useState([]);
 
   const [imagesmain, setImagesMain] = useState([]);
+  const [fav, setfav] = useState('');
 
 
   // function deleteImage(ImageToDelete) {
@@ -101,8 +116,8 @@ function App() {
   // }
 
 
-  function handleChange(event) {
-    setImagesAdd(event.target.value);
+function handleChange(event) {
+  setImagesAdd(event.target.value);
 
 }
 
@@ -110,7 +125,7 @@ function App() {
 function handleSubmit(event) {
   console.log(imagesAdd);
 
-
+  
 
   const apiRoot = "https://api.unsplash.com";
   const accessKey = process.env.REACT_APP_ACCESSKEY;
@@ -120,6 +135,8 @@ function handleSubmit(event) {
           console.log(res);
           setResult(res.data.results)
       });
+
+   
 }
 
 
@@ -323,8 +340,6 @@ function handleSubmit(event) {
 
 
 
-
-
   //newimageform - title, image, imageDesc, by, tags, tagstwo, tagsthree
   //migration params - :title, :image, :image_desc, :by, :tags, :tagstwo, :tagsthree, :user_id
 
@@ -351,7 +366,7 @@ function handleSubmit(event) {
                     <Link to="/dashboard">
                       <button className="button is-black" > Dashboard </button>
                     </Link>
-                    <Route path="/login">
+                    <Route path="/">
                     <button className="button is-black" onClick={logout}>Logout</button>  
                     </Route>  
                 </div>
@@ -373,7 +388,7 @@ function handleSubmit(event) {
         
           
           <Route exact path="/ideasdisplay">
-            <Ideasdisplay />
+            <Ideasdisplay favComponent={AddFavourites} />
 
 
   <div className={styles.getideastext}>
@@ -381,7 +396,7 @@ function handleSubmit(event) {
             </div>
           
             
-            <div className="image">
+            <div className={styles.images}>
             <img className="pdm-image" src={process.env.PUBLIC_URL + '/imgwork.png'} alt="modular-logo" />
             </div>
 
@@ -403,8 +418,10 @@ function handleSubmit(event) {
             <GlobalStyle/>
             <WrapperImage>           
               {result.map((image) => (
+                
 
                   <Ideasdisplay url={image.urls.regular} key={image.id} favComponent={AddFavourites}/>
+                 
                           
                 ))}
         
