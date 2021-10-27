@@ -157,6 +157,28 @@ function handleSubmit(event) {
 
 
 
+  useEffect(() => {
+    const token = localStorage.getItem("jwt");
+    console.log("token: " + token)
+        // console.log(user.user.username)
+    fetch(`${url}/api/v1/profile`, {
+            method: "GET",
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        })
+        .then((response) => {
+            if (response.ok) {
+                response.json()
+                      .then((data) => {
+                        setLoggedIn(true)
+                        setUser(data.user)
+                    });
+            } else {
+                console.log("please log in ")
+            }
+        });
+}, []);
  
 
 
@@ -191,28 +213,6 @@ function handleSubmit(event) {
   }
 
 
-  useEffect(() => {
-    const token = localStorage.getItem("jwt");
-    console.log("token: " + token)
-        // console.log(user.user.username)
-    fetch(`${url}/api/v1/profile`, {
-            method: "GET",
-            headers: {
-                Authorization: `Bearer ${token}`,
-            },
-        })
-        .then((response) => {
-            if (response.ok) {
-                response.json()
-                    .then((data) => {
-                        setLoggedIn(true)
-                        setUser(data.user)
-                    });
-            } else {
-                console.log("please log in react")
-            }
-        });
-}, []);
 
   function login(username, password) {
       fetch(`${url}/api/v1/login`, {
@@ -259,18 +259,28 @@ function handleSubmit(event) {
 
 
 
-  useEffect(() => {
-      const token = localStorage.getItem("jwt");
+  // useEffect(() => {
+  //     // const token = localStorage.getItem("jwt");
 
-      fetch(`${url}/api/v1/images`, {
-              method: "GET",
-              headers: {
-                  Authorization: `Bearer ${token}`
-              },
-          })
-          .then((r) => r.json())
-          .then((imagesmain) => setImagesMain(imagesmain))
-  }, [])
+  //     fetch(`${url}/api/v1/images`, {
+  //             method: "GET",
+  //             headers: {
+  //                 Authorization: `Bearer ${token}`
+  //             },
+  //         })
+  //         .then((r) => r.json())
+  //         .then((imagesmain) => setImagesMain(imagesmain))
+  // }, [])
+
+
+
+  // useEffect(() => {
+  //   fetch(`${url}/images`).then((r) => {
+  //     if (r.ok) {
+  //       r.json().then((user) => { setImagesMain(user.imagesmain); setImagesMain(user) });
+  //     }
+  //   });
+  // }, []);
 
 
   function addImage(title, image, imageDesc, by, tags, tagstwo, tagsthree) {
