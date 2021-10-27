@@ -151,26 +151,7 @@ function App() {
 
 
 
-  useEffect(() =>  {
-    const token = localStorage.getItem("jwt");
-    console.log("token: " + token)
-    // console.log(user.user.username)
-    fetch(`${url}/api/v1/profile`, {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }).then((response) => {
-      if (response.ok) {
-        response.json().then((data) => {
-          setLoggedIn(true)
-          setUser(data.user)
-        });
-      } else {
-        console.log("please log in")
-      }
-    });
-  }, []);
+ 
 
 
   function signup(username, password, bio, avatar) {
@@ -202,6 +183,29 @@ function App() {
       })
   }
 
+
+  useEffect(() =>  {
+    const token = localStorage.getItem("jwt");
+    console.log("token: " + token)
+    // console.log(user.user.username)
+    fetch(`${url}/api/v1/profile`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }).then((response) => {
+      if (response.ok) {
+        response.json().then((data) => {
+          setLoggedIn(true)
+          setUser(data.user)
+        });
+      } else {
+        console.log("please log in")
+      }
+    });
+  }, []);
+
+
   function login(username, password) {
     fetch(`${url}/api/v1/login`, {
       method: "POST",
@@ -216,7 +220,9 @@ function App() {
         }
       })
     }).then((response) => {
+
       if (response.ok) {
+        
         response.json().then((data) => {
           console.log("hi" + data.jwt)
           setUser(data.user)
