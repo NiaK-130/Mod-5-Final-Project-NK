@@ -68,7 +68,7 @@ function App() {
 
 
   const [loggedIn, setLoggedIn] = useState(false)
-  const [user, setUser] = useState()
+  const [user, setUser] = useState({})
 
   const [imagesAdd, setImagesAdd] = useState("");
   const [result, setResult] = useState([]);
@@ -240,11 +240,22 @@ function App() {
 
 
 
+  useEffect(() => {
+    fetch(`${url}api/v1/images`).then((r) => {
+      if (r.ok) {
+        r.json().then((user) => { setImages(user.images); setUser(user) });
+      }
+    });
+  }, []);
+
+
+
+
 
 
   function addImage(title, image, imageDesc, by, tags, tagstwo, tagsthree){
 
-    fetch(`${url}api/v1/images`, {
+    fetch(`${url}/api/v1/images`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json", 
@@ -292,16 +303,22 @@ function App() {
 
                 <div className={styles.headerbuttons}>
                     <Link to="/ideasdisplay">
-                      <button className="button is-normal" > Get Ideas </button>
+                      <div className = {styles.getideasbutton}>
+                      <button className="button is-black" > Get Ideas </button>
+                      </div>
                     </Link>
                     <Link to="/professionalsdisplay">
-                      <button className="button is-normal" > Find Professionals </button>
+                      <button className="button is-black" > Find Professionals </button>
                     </Link>
 
                     <Link to="/dashboard">
-                      <button className="button is-normal" > Dashboard </button>
+                      <button className="button is-black" > Dashboard </button>
                     </Link>
-                    <button className="button is-normal" onClick={logout}>Logout</button>    
+            
+                    <Route path= "/">
+                    <button className="button is-black" onClick={logout}>Logout</button>    
+                    </Route>
+                   
                 </div>
             </div>
             

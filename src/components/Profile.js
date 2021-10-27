@@ -1,16 +1,16 @@
-import React from 'react'
-import Header from './Header'
+// import React from 'react'
+// import Header from './Header'
 
 
-function Profile() {
+// function Profile() {
 
-    return (
-        <div>
-            <Header />
+//     return (
+//         <div>
+//             <Header />
           
-            <h1>Profile</h1>
-        </div>
-    )
-}
+//             <h1>Profile</h1>
+//         </div>
+//     )
+// }
 
-export default Profile
+// export default Profile

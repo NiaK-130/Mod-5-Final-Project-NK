@@ -26,6 +26,10 @@ export default function Dashboard({images, addImage, user}) {
         
 
         <div className = "dashboard-div">
+
+            <div className = {styles.yourdashboard}>
+            <h2> Your Dashboard </h2>
+            </div>
           
         
 
@@ -45,14 +49,19 @@ export default function Dashboard({images, addImage, user}) {
                 <img className="hrlin" src={process.env.PUBLIC_URL + '/hrline.png'} alt="hrline-block" />
             </div >
 
-     
+            <div className = {styles.imagecontainer}>
+
+
+            </div>
+
+
 
             <div className = {styles.welcome}>
             <h1>Welcome {user.avatar} </h1>
             </div>
            
             <div className = {styles.addimagebutton}>
-                <button className = "button is-light" onClick={handleClick}>Add Image</button>
+                <button className = "button is-link" onClick={handleClick}>Add Image</button>
             </div>
             {form ? <NewImageForm images={images} addImage={addImage}/> : ' '}
             {images.map((image) => <ImageDisplay  image={image} key={image.id}/>)}
