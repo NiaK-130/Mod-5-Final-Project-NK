@@ -90,60 +90,46 @@ function App() {
 
   const [imagesmain, setImagesMain] = useState([]);
 
-  function addImage(title, image, imageDesc, by, tags, tagstwo, tagsthree) {
 
-      fetch(`${url}api/v1/images`, {
-              method: "POST",
-              headers: {
-                  "Content-Type": "application/json",
-                  "Authorization": `Bearer ${localStorage.getItem("jwt")}`
-              },
-              body: JSON.stringify({
-                  title: `${title}`,
-                  image: `${image}`,
-                  image_desc: `${imageDesc}`,
-                  by: `${by}`,
-                  tags: `${tags}`,
-                  tagstwo: `${tagstwo}`,
-                  tagsthree: `${tagsthree}`,
-                  user_id: `${user.id}`,
-              }),
+  // function deleteImage(ImageToDelete) {
 
-          })
-          .then((r) => r.json())
-          .then(imagepassed => {
-              console.log("this is the images from app", imagesmain)
-              setImagesMain([...imagesmain, imagepassed])
-          });
-  }
+
+  //   fetch(`images/${ImageToDelete}`, {
+  //     method: "DELETE",
+  //   })
+  //     .then(() => setImagesMain(imagesmain.filter(imagepassed => imagepassed.id !== ImageToDelete)));
+  // }
 
 
   function handleChange(event) {
-      setImagesAdd(event.target.value);
+    setImagesAdd(event.target.value);
 
-  }
+}
 
 
-  // useEffect(() => {
-  //   fetchImages();
-
-  // }, [])
-
-  // const fetchImages = () => {
+function handleSubmit(event) {
+  console.log(imagesAdd);
 
 
 
-  function handleSubmit(event) {
-      console.log(imagesAdd);
-      const apiRoot = "https://api.unsplash.com";
-      const accessKey = process.env.REACT_APP_ACCESSKEY;
-      axios
-          .get(`${apiRoot}/search/photos?per_page=100&query=` + imagesAdd + `&client_id=${accessKey}&count=30`)
-          .then(res => {
-              console.log(res);
-              setResult(res.data.results)
-          });
-  }
+
+  const apiRoot = "https://api.unsplash.com";
+  const accessKey = process.env.REACT_APP_ACCESSKEY;
+  axios
+      .get(`${apiRoot}/search/photos?per_page=100&query=` + imagesAdd + `&client_id=${accessKey}&count=30`)
+      .then(res => {
+          console.log(res);
+          setResult(res.data.results)
+      });
+}
+
+
+
+
+
+
+
+
   //axios
   //.get(`${apiRoot}/search/photos?page=1&page=2&per_page=40&query=interior&client_id=${accessKey}&count=10`)
   //.then(res => setImagesAdd([...imagesAdd, ...res.data.results]))
@@ -171,28 +157,7 @@ function App() {
 
 
 
-  useEffect(() => {
-      const token = localStorage.getItem("jwt");
-      console.log("token: " + token)
-          // console.log(user.user.username)
-      fetch(`${url}/api/v1/profile`, {
-              method: "GET",
-              headers: {
-                  Authorization: `Bearer ${token}`,
-              },
-          })
-          .then((response) => {
-              if (response.ok) {
-                  response.json()
-                      .then((data) => {
-                          setLoggedIn(true)
-                          setUser(data.user)
-                      });
-              } else {
-                  console.log("please log in")
-              }
-          });
-  }, []);
+ 
 
 
   function signup(username, password, bio, avatar) {
@@ -225,6 +190,30 @@ function App() {
           })
   }
 
+
+  useEffect(() => {
+    const token = localStorage.getItem("jwt");
+    console.log("token: " + token)
+        // console.log(user.user.username)
+    fetch(`${url}/api/v1/profile`, {
+            method: "GET",
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        })
+        .then((response) => {
+            if (response.ok) {
+                response.json()
+                    .then((data) => {
+                        setLoggedIn(true)
+                        setUser(data.user)
+                    });
+            } else {
+                console.log("please log in react")
+            }
+        });
+}, []);
+
   function login(username, password) {
       fetch(`${url}/api/v1/login`, {
               method: "POST",
@@ -240,10 +229,15 @@ function App() {
               })
           })
           .then((response) => {
+
+
+          
               if (response.ok) {
                   response.json()
+                  
                       .then((data) => {
                           console.log("hi" + data.jwt)
+                          console.log("print out", data.user)
                           setUser(data.user)
                           setLoggedIn(true)
                           localStorage.setItem("jwt", data.jwt);
@@ -279,6 +273,48 @@ function App() {
   }, [])
 
 
+  function addImage(title, image, imageDesc, by, tags, tagstwo, tagsthree) {
+
+    fetch(`${url}api/v1/images`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${localStorage.getItem("jwt")}`
+            },
+            body: JSON.stringify({
+                title: `${title}`,
+                image: `${image}`,
+                image_desc: `${imageDesc}`,
+                by: `${by}`,
+                tags: `${tags}`,
+                tagstwo: `${tagstwo}`,
+                tagsthree: `${tagsthree}`,
+                user_id: `${user.id}`,
+            }),
+
+        })
+        .then((r) => r.json())
+        .then(imagepassed => {
+            console.log("this is the images from app", imagesmain)
+            setImagesMain([...imagesmain, imagepassed])
+        });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   //newimageform - title, image, imageDesc, by, tags, tagstwo, tagsthree
   //migration params - :title, :image, :image_desc, :by, :tags, :tagstwo, :tagsthree, :user_id
@@ -306,7 +342,9 @@ function App() {
                     <Link to="/dashboard">
                       <button className="button is-normal" > Dashboard </button>
                     </Link>
-                    <button className="button is-normal" onClick={logout}>Logout</button>    
+                    <Route path="/">
+                    <button className="button is-normal" onClick={logout}>Logout</button>  
+                    </Route>  
                 </div>
             </div>
             
@@ -314,12 +352,12 @@ function App() {
 
 
           <Route exact path="/login">
-            <Dashboard user={user} imagesmain={imagesmain} addImage={addImage}/>
+            <Dashboard user={user} imagesmain={imagesmain} addImage={addImage} />
           </Route>
 
           <Route exact path="/dashboard">
             
-            <Dashboard user={user} imagesmain={imagesmain} addImage={addImage}/>
+            <Dashboard user={user} imagesmain={imagesmain} addImage={addImage} />
             
           </Route>
 

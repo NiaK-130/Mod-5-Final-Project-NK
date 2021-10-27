@@ -24,7 +24,7 @@ export default function Dashboard({imagesmain, addImage, user}) {
 
         <div className = "dashboard-div">
           
-        
+    
 
             {/* <div className = {styles.dash}>
                 <img className="dash" src={process.env.PUBLIC_URL + '/dashblock.png'} alt="dash-block" />
@@ -51,7 +51,9 @@ export default function Dashboard({imagesmain, addImage, user}) {
             <div className = {styles.addimagebutton}>
                 <button className = "button is-light" onClick={handleClick}>Add Image</button>
             </div>
+          
             {form ? <NewImageForm imagesmain={imagesmain} addImage={addImage}/> : ' '}
+            
             {/* {imagesmain.map((imagepassed) => <ImageDisplay  imagepassed={imagepassed} key={imagepassed.id}/>)} */}
             {imagesmain.map((image) => <ImageDisplay imagesmain={image}/>)}
         </div>

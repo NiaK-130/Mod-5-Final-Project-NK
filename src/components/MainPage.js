@@ -31,11 +31,11 @@ export default function MainPage({ login, signup }) {
                             </div>
                             <div className={styles.right}>
                                     <Link to="/login">
-                                    <button className="button is-medium">Sign In </button>
+                                    <button className="button is-black is-medium">Sign In </button>
                                         {/* <button className="sign-in-button" > Sign In </button> */}
                                     </Link>
                                     <Link to="/signup">
-                                    <button className="button is-medium"> Sign Up </button>
+                                    <button className="button is-black is-medium"> Sign Up </button>
                                         {/* <button className="sign-up-button"> Sign Up </button> */}
                                     </Link>
                             </div>

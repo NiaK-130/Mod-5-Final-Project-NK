@@ -7,7 +7,7 @@ export default function ImageDisplay({imagesmain,key}) {
     console.log("i am here",imagesmain)
 
     // function handleClick() {
-    //     deleteStudent(student.id)
+    //     deleteImage(imagesmain.id)
     // }
 
     return (
