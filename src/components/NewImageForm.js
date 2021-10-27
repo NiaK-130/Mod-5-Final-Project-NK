@@ -2,7 +2,7 @@ import React, {useState,useEffect} from 'react'
 import styles from './NewImageForm.module.css';
 
 
-export default function NewImageForm({}) {
+export default function NewImageForm({addImage}) {
     
     const [title, setTitle] = useState('')
     const [image, setImage] = useState('')
@@ -16,36 +16,37 @@ export default function NewImageForm({}) {
         console.log("state:",this)
         console.log(imagesmain)
         })
-    function addImage(title, image, imageDesc, by, tags, tagstwo, tagsthree){
-        const production = "https://latest-modular-backend.herokuapp.com/"
-        const development = "http://localhost:3000/"
-        const url = (process.env.NODE_ENV  === "production" ? production : development)
+    // function addImage(title, image, imageDesc, by, tags, tagstwo, tagsthree){
+    //     const production = "https://latest-modular-backend.herokuapp.com/"
+    //     const development = "http://localhost:3000/"
+    //     const url = (process.env.NODE_ENV  === "production" ? production : development)
 
-        fetch(`${url}api/v1/images`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json", 
-            "Authorization": `Bearer ${localStorage.getItem("jwt")}`
-          },
-          body: JSON.stringify({
-            title: `${title}`,
-            image: `${image}`,
-            image_desc: `${imageDesc}`,
-            by: `${by}`,
-            tags: `${tags}`,
-            tagstwo: `${tagstwo}`,
-            tagsthree: `${tagsthree}`,
-            user_id: 1,
-          }),
+    //     fetch(`${url}api/v1/images`, {
+    //       method: "POST",
+    //       headers: {
+    //         "Content-Type": "application/json", 
+    //         "Authorization": `Bearer ${localStorage.getItem("jwt")}`
+    //       },
+    //       body: JSON.stringify({
+    //         title: `${title}`,
+    //         image: `${image}`,
+    //         image_desc: `${imageDesc}`,
+    //         by: `${by}`,
+    //         tags: `${tags}`,
+    //         tagstwo: `${tagstwo}`,
+    //         tagsthree: `${tagsthree}`,
+    //         user_id: 1,
+    //       }),
     
-        })
-        .then((r) => r.json())
-        .then(imagepassed => {
-          console.log("this is the images from app",imagesmain)
-          setImagesMain([...imagesmain, imagepassed])
-        });
-      }
+    //     })
+    //     .then((r) => r.json())
+    //     .then(imagepassed => {
+    //       console.log("this is the images from app",imagesmain)
+    //       setImagesMain([...imagesmain, imagepassed])
+    //     });
+    //   }
     function handleSubmit(e) {
+        console.log(addImage)
         e.preventDefault()
         addImage(title, image, imageDesc, by, tags, tagstwo, tagsthree)
     }

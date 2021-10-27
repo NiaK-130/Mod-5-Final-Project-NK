@@ -16,8 +16,7 @@ export default function Dashboard({imagesmain, addImage, user}) {
         e.preventDefault()
         openCloseForm(!form)
     }
-
-
+    console.log("herer",imagesmain)
 
     return (
 
@@ -27,7 +26,7 @@ export default function Dashboard({imagesmain, addImage, user}) {
           
         
 
-            <div className = {styles.dash}>
+            {/* <div className = {styles.dash}>
                 <img className="dash" src={process.env.PUBLIC_URL + '/dashblock.png'} alt="dash-block" />
             </div>
 
@@ -41,7 +40,7 @@ export default function Dashboard({imagesmain, addImage, user}) {
 
             <div className = {styles.hrlineone}>
                 <img className="hrlin" src={process.env.PUBLIC_URL + '/hrline.png'} alt="hrline-block" />
-            </div >
+            </div > */}
 
      
 
@@ -54,7 +53,7 @@ export default function Dashboard({imagesmain, addImage, user}) {
             </div>
             {form ? <NewImageForm imagesmain={imagesmain} addImage={addImage}/> : ' '}
             {/* {imagesmain.map((imagepassed) => <ImageDisplay  imagepassed={imagepassed} key={imagepassed.id}/>)} */}
-            
+            {imagesmain.map((image) => <ImageDisplay imagesmain={image}/>)}
         </div>
     )
 }

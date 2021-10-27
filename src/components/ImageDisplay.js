@@ -2,9 +2,9 @@ import React from "react";
 
 
 
-export default function ImageDisplay({imagesmain}) {
+export default function ImageDisplay({imagesmain,key}) {
 
-    console.log(imagesmain)
+    console.log("i am here",imagesmain)
 
     // function handleClick() {
     //     deleteStudent(student.id)

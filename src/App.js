@@ -1,5 +1,8 @@
 // import './App.css';
-import React, { useEffect, useState } from 'react';
+import React, {
+  useEffect,
+  useState
+} from 'react';
 // import SigninHome from './components/SigninHome.js';
 // import Signup from './components/Signup.js';
 import Home from './components/Home';
@@ -8,30 +11,42 @@ import MainPage from "./components/MainPage";
 import Profile from './components/Profile';
 import {
   BrowserRouter as Router,
-  Link, Switch, Route
+  Link,
+  Switch,
+  Route
 
 } from 'react-router-dom'
 import Ideasdisplay from './components/Ideasdisplay';
 import axios from 'axios';
-import { Professionalsdisplay } from './components/Professional-Landing-page/Professionalsdisplay';
-import {Search} from './components/Search/Search';
+import {
+  Professionalsdisplay
+} from './components/Professional-Landing-page/Professionalsdisplay';
+import {
+  Search
+} from './components/Search/Search';
 import styles from './App.module.css'
 import logo from '../src/assets/logo.png';
-import {Loader} from './components/Loader';
+import {
+  Loader
+} from './components/Loader';
 import styled from 'styled-components';
-import {createGlobalStyle} from 'styled-components';
+import {
+  createGlobalStyle
+} from 'styled-components';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import {AddFavourites} from './components/AddFavourites';
+import {
+  AddFavourites
+} from './components/AddFavourites';
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle `
 * {
-      margin: 0;
-      padding:0;
-      box-sizing: border-box;
-        // position: relative;
-        // transition: transform 0.2s;
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+      // position: relative;
+      // transition: transform 0.2s;
+  
     
-      
 }
 
 // :hover {
@@ -42,19 +57,19 @@ const GlobalStyle = createGlobalStyle`
 
 
 body{
-  font-family: san-serif;
+font-family: san-serif;
 }
 `;
 
 
 
-const WrapperImage = styled.section`
-  max-width: 70rem;
-  margin: 4rem auto;
-  display: grid;
-  grid-gap: 1em;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-auto-rows: 300px;
+const WrapperImage = styled.section `
+max-width: 70rem;
+margin: 4rem auto;
+display: grid;
+grid-gap: 1em;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+grid-auto-rows: 300px;
 
 
 `;
@@ -64,7 +79,7 @@ function App() {
 
   const production = "https://latest-modular-backend.herokuapp.com/"
   const development = "http://localhost:3000/"
-  const url = (process.env.NODE_ENV  === "production" ? production : development)
+  const url = (process.env.NODE_ENV === "production" ? production : development)
 
 
   const [loggedIn, setLoggedIn] = useState(false)
@@ -74,81 +89,61 @@ function App() {
   const [result, setResult] = useState([]);
 
   const [imagesmain, setImagesMain] = useState([]);
-  console.log("this is images", imagesmain)
-  function addImage(title, image, imageDesc, by, tags, tagstwo, tagsthree){
 
-    fetch(`${url}api/v1/images`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json", 
-        "Authorization": `Bearer ${localStorage.getItem("jwt")}`
-      },
-      body: JSON.stringify({
-        title: `${title}`,
-        image: `${image}`,
-        image_desc: `${imageDesc}`,
-        by: `${by}`,
-        tags: `${tags}`,
-        tagstwo: `${tagstwo}`,
-        tagsthree: `${tagsthree}`,
-        user_id: `${user.id}`,
-      }),
+  function addImage(title, image, imageDesc, by, tags, tagstwo, tagsthree) {
 
-    })
-    .then((r) => r.json())
-    .then(imagepassed => {
-      console.log("this is the images from app",imagesmain)
-      setImagesMain([...imagesmain, imagepassed])
-    });
+      fetch(`${url}api/v1/images`, {
+              method: "POST",
+              headers: {
+                  "Content-Type": "application/json",
+                  "Authorization": `Bearer ${localStorage.getItem("jwt")}`
+              },
+              body: JSON.stringify({
+                  title: `${title}`,
+                  image: `${image}`,
+                  image_desc: `${imageDesc}`,
+                  by: `${by}`,
+                  tags: `${tags}`,
+                  tagstwo: `${tagstwo}`,
+                  tagsthree: `${tagsthree}`,
+                  user_id: `${user.id}`,
+              }),
+
+          })
+          .then((r) => r.json())
+          .then(imagepassed => {
+              console.log("this is the images from app", imagesmain)
+              setImagesMain([...imagesmain, imagepassed])
+          });
   }
 
 
-  function handleChange(event){
-    setImagesAdd(event.target.value);
+  function handleChange(event) {
+      setImagesAdd(event.target.value);
 
   }
-
-
-   // useEffect(() => {
-  //   fetchImages();
-   
-  // }, [])
-
-  // const fetchImages = () => {
-
-
-
-  function handleSubmit(event){
-    console.log(imagesAdd);
-
-  
 
 
   // useEffect(() => {
   //   fetchImages();
-   
+
   // }, [])
 
   // const fetchImages = () => {
 
-    const apiRoot = "https://api.unsplash.com";
-    const accessKey = process.env.REACT_APP_ACCESSKEY;
-
-    axios
-      .get(`${apiRoot}/search/photos?per_page=100&query=`+imagesAdd+`&client_id=${accessKey}&count=30`)
-      .then(res => {console.log(res);
-        setResult(res.data.results)
-      });
-        
-  
-//   }
-
-}
-
-//   }
- 
 
 
+  function handleSubmit(event) {
+      console.log(imagesAdd);
+      const apiRoot = "https://api.unsplash.com";
+      const accessKey = process.env.REACT_APP_ACCESSKEY;
+      axios
+          .get(`${apiRoot}/search/photos?per_page=100&query=` + imagesAdd + `&client_id=${accessKey}&count=30`)
+          .then(res => {
+              console.log(res);
+              setResult(res.data.results)
+          });
+  }
   //axios
   //.get(`${apiRoot}/search/photos?page=1&page=2&per_page=40&query=interior&client_id=${accessKey}&count=10`)
   //.then(res => setImagesAdd([...imagesAdd, ...res.data.results]))
@@ -176,120 +171,119 @@ function App() {
 
 
 
-  useEffect(() =>  {
-    const token = localStorage.getItem("jwt");
-    console.log("token: " + token)
-    // console.log(user.user.username)
-    fetch(`${url}/api/v1/profile`, {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }).then((response) => {
-      if (response.ok) {
-        response.json().then((data) => {
-          setLoggedIn(true)
-          setUser(data.user)
-        });
-      } else {
-        console.log("please log in")
-      }
-    });
+  useEffect(() => {
+      const token = localStorage.getItem("jwt");
+      console.log("token: " + token)
+          // console.log(user.user.username)
+      fetch(`${url}/api/v1/profile`, {
+              method: "GET",
+              headers: {
+                  Authorization: `Bearer ${token}`,
+              },
+          })
+          .then((response) => {
+              if (response.ok) {
+                  response.json()
+                      .then((data) => {
+                          setLoggedIn(true)
+                          setUser(data.user)
+                      });
+              } else {
+                  console.log("please log in")
+              }
+          });
   }, []);
 
 
   function signup(username, password, bio, avatar) {
-    fetch(`${url}/api/v1/users`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        user: {
-          username: `${username}`,
-          password: `${password}`,
-          bio: `${bio}`,
-          avatar: `${avatar}`,
-        },
-      }),
-    })
-      .then((response) => {
-        if (response.ok) {
-          response.json().then((data) => {
-            setUser(data.user)
-            setLoggedIn(true)
-            localStorage.setItem("jwt", data.jwt);
-          });
-        } else {
-          console.log("form incorrectly filled out")
-        }
-      })
+      fetch(`${url}/api/v1/users`, {
+              method: "POST",
+              headers: {
+                  "Content-Type": "application/json",
+                  Accept: "application/json",
+              },
+              body: JSON.stringify({
+                  user: {
+                      username: `${username}`,
+                      password: `${password}`,
+                      bio: `${bio}`,
+                      avatar: `${avatar}`,
+                  },
+              }),
+          })
+          .then((response) => {
+              if (response.ok) {
+                  response.json()
+                      .then((data) => {
+                          setUser(data.user)
+                          setLoggedIn(true)
+                          localStorage.setItem("jwt", data.jwt);
+                      });
+              } else {
+                  console.log("form incorrectly filled out")
+              }
+          })
   }
 
   function login(username, password) {
-    fetch(`${url}/api/v1/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        user: {
-          username: `${username}`,
-          password: `${password}`
-        }
-      })
-    }).then((response) => {
-      if (response.ok) {
-        response.json().then((data) => {
-          console.log("hi" + data.jwt)
-          setUser(data.user)
-          setLoggedIn(true)
-          localStorage.setItem("jwt", data.jwt);
-          console.log(data.user)
-        });
-      } else {
-        console.log("wrong username/password")
-      }
-    })
+      fetch(`${url}/api/v1/login`, {
+              method: "POST",
+              headers: {
+                  "Content-Type": "application/json",
+                  Accept: "application/json",
+              },
+              body: JSON.stringify({
+                  user: {
+                      username: `${username}`,
+                      password: `${password}`
+                  }
+              })
+          })
+          .then((response) => {
+              if (response.ok) {
+                  response.json()
+                      .then((data) => {
+                          console.log("hi" + data.jwt)
+                          setUser(data.user)
+                          setLoggedIn(true)
+                          localStorage.setItem("jwt", data.jwt);
+                          console.log(data.user)
+                      });
+              } else {
+                  console.log("wrong username/password")
+              }
+          })
   }
 
 
   function logout() {
-    localStorage.clear()
-    setUser(null)
-    setLoggedIn(false)
+      localStorage.clear()
+      setUser(null)
+      setLoggedIn(false)
 
   }
 
 
 
   useEffect(() => {
-    const token = localStorage.getItem("jwt");
+      const token = localStorage.getItem("jwt");
 
-    fetch(`${url}/api/v1/images`, {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${token}`
-      },
-    })
-    .then((r) => r.json())
-    .then((imagesmain) => setImagesMain(imagesmain))
+      fetch(`${url}/api/v1/images`, {
+              method: "GET",
+              headers: {
+                  Authorization: `Bearer ${token}`
+              },
+          })
+          .then((r) => r.json())
+          .then((imagesmain) => setImagesMain(imagesmain))
   }, [])
 
-
-
-
-
-  
 
 
   //newimageform - title, image, imageDesc, by, tags, tagstwo, tagsthree
   //migration params - :title, :image, :image_desc, :by, :tags, :tagstwo, :tagsthree, :user_id
 
   return (
-
     <div className="App">
       {loggedIn ?
         <Router>
@@ -320,12 +314,12 @@ function App() {
 
 
           <Route exact path="/login">
-            <Dashboard user={user} imagesmain={imagesmain}/>
+            <Dashboard user={user} imagesmain={imagesmain} addImage={addImage}/>
           </Route>
 
           <Route exact path="/dashboard">
             
-            <Dashboard user={user} imagesmain={imagesmain}/>
+            <Dashboard user={user} imagesmain={imagesmain} addImage={addImage}/>
             
           </Route>
 
@@ -344,8 +338,8 @@ function App() {
             <img className="pdm-image" src={process.env.PUBLIC_URL + '/imgwork.png'} alt="modular-logo" />
             </div>
 
-           
-           
+          
+          
             <div className={styles.ideasinputmain}>
               <div className={styles.ideasinput}>
                 <input className = "input" onChange={handleChange} type="text" name="photo" placeholder="Search for Ideas"></input>
@@ -358,23 +352,23 @@ function App() {
                 // next={fetchImages}
                 hasMore={true}
                 // loader={<Loader/>}  
-               >
+              >
             <GlobalStyle/>
             <WrapperImage>           
               {result.map((image) => (
 
                   <Ideasdisplay url={image.urls.regular} key={image.id} favComponent={AddFavourites}/>
-                           
+                          
                 ))}
         
             </WrapperImage>
-         
+        
             </InfiniteScroll>
           </Route>
 
-         
         
-         
+        
+        
 
           <Switch>
 
@@ -394,13 +388,8 @@ function App() {
 
         <MainPage login={login} signup={signup} />
 
-
       }
-
-
     </div>
-
-
   );
 }
 
