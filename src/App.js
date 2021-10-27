@@ -188,7 +188,7 @@ function App() {
     const token = localStorage.getItem("jwt");
     console.log("token: " + token)
     // console.log(user.user.username)
-    fetch(`${url}/api/v1/profile`, {
+    fetch(`${url}api/v1/profile`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -244,17 +244,25 @@ function App() {
   }
 
 
+  
+
+
+
+
+
+
+
 
 
 
 
   function addImage(title, image, imageDesc, by, tags, tagstwo, tagsthree){
-
+    const token = localStorage.getItem("jwt");
     fetch(`${url}api/v1/images`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json", 
-        "Authorization": `Bearer ${localStorage.getItem("jwt")}`
+        "Authorization": `Bearer ${token}`,
       },
       body: JSON.stringify({
         title: `${title}`,
