@@ -16,15 +16,44 @@
    
 }
 
+.logonew{
+    width:55%;
+    margin-left: -2%;
+}
+
+.logonewtwo{
+    width:58%;
+    margin-left: 49%;
+    margin-top:-0.05%;
+
+}
+
+
+.left{
+      position: fixed;
+    top: 0;
+}
+
+.newleft{
+    position: fixed;
+    top: 0;
+
+}
+
+
+
 .left > * {
     margin-right: 1.5rem;
+
 }
 
 .right{
     display: flex;
     align-items: center;
-    position: sticky;
+    position: fixed;
     top: 0;
+    margin-left:79%;
+    margin-top: 3%;
 }
 
 .right > * {

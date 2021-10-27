@@ -49,3 +49,17 @@
     object-fit: cover;
     object-position: center right;
 }
+
+
+
+.addimagebutton{
+    margin-top: -14%;
+    margin-left: 72%;
+}
+
+.yourdashboard{
+    font-weight: bolder;
+    font-size: 25px;
+    margin-left: -55%;
+    margin-top:-5%;
+}

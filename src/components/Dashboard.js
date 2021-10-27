@@ -24,9 +24,12 @@ export default function Dashboard({imagesmain, addImage, user}) {
 
         <div className = "dashboard-div">
           
+          <div className = {styles.yourdashboard}>
+            <h2> Your Dashboard </h2>
+            </div>
     
 
-            {/* <div className = {styles.dash}>
+            <div className = {styles.dash}>
                 <img className="dash" src={process.env.PUBLIC_URL + '/dashblock.png'} alt="dash-block" />
             </div>
 
@@ -40,7 +43,7 @@ export default function Dashboard({imagesmain, addImage, user}) {
 
             <div className = {styles.hrlineone}>
                 <img className="hrlin" src={process.env.PUBLIC_URL + '/hrline.png'} alt="hrline-block" />
-            </div > */}
+            </div >
 
      
 
@@ -49,7 +52,7 @@ export default function Dashboard({imagesmain, addImage, user}) {
             </div>
            
             <div className = {styles.addimagebutton}>
-                <button className = "button is-light" onClick={handleClick}>Add Image</button>
+                <button className = "button is-link" onClick={handleClick}>Add Image</button>
             </div>
           
             {form ? <NewImageForm imagesmain={imagesmain} addImage={addImage}/> : ' '}

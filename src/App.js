@@ -112,7 +112,6 @@ function handleSubmit(event) {
 
 
 
-
   const apiRoot = "https://api.unsplash.com";
   const accessKey = process.env.REACT_APP_ACCESSKEY;
   axios
@@ -343,17 +342,17 @@ function handleSubmit(event) {
 
                 <div className={styles.headerbuttons}>
                     <Link to="/ideasdisplay">
-                      <button className="button is-normal" > Get Ideas </button>
+                      <button className="button is-black" > Get Ideas </button>
                     </Link>
                     <Link to="/professionalsdisplay">
-                      <button className="button is-normal" > Find Professionals </button>
+                      <button className="button is-black" > Find Professionals </button>
                     </Link>
 
                     <Link to="/dashboard">
-                      <button className="button is-normal" > Dashboard </button>
+                      <button className="button is-black" > Dashboard </button>
                     </Link>
-                    <Route path="/">
-                    <button className="button is-normal" onClick={logout}>Logout</button>  
+                    <Route path="/login">
+                    <button className="button is-black" onClick={logout}>Logout</button>  
                     </Route>  
                 </div>
             </div>

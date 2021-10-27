@@ -7,7 +7,10 @@ import {
 
 } from 'react-router-dom';
 import styles from './MainPage.module.css';
-import logo from '../assets/logo.png';
+// import logo from '../assets/logo.png';
+import logonew from '../assets/logonew.png';
+import logonewtwo from '../assets/logonewtwo.png';
+import logonewthree from '../assets/logonewthree.png';
 import homepagemoduleone from '../assets/homepagemoduleone.png';
 import homepagemoduletwo from '../assets/homepagemoduletwo.png';
 import homepagemodulethree from '../assets/homepagemodulethree.png';
@@ -27,8 +30,16 @@ export default function MainPage({ login, signup }) {
                  <Router>
                      <div className={styles.mainpagebuttons}>
                              <div className={styles.left}>
-                                     <img src={logo} className={styles.logo} alt='logo'/>
+                                     {/* <img src={logo} className={styles.logo} alt='logo'/> */}
+                                     <img src={logonew} className={styles.logonew} alt='logo'/>
+                                     
+          
                             </div>
+                            <div className={styles.newleft}>
+                            <img src={logonewtwo} className={styles.logonewtwo} alt='logo'/>
+                            </div>
+
+
                             <div className={styles.right}>
                                     <Link to="/login">
                                     <button className="button is-black is-medium">Sign In </button>
