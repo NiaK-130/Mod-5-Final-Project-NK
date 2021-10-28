@@ -14,6 +14,7 @@ export default function ImageDisplay({imagesmain, deleteImage, key}) {
     console.log("hkhjkhkjhkhkhk", imagesmain)
 
     return (
+        <div className = {styles.outerimagedisplaycontainer}>
         <div className = {styles.imagedisplaycontainer} >
             <img className = {styles.imagebase} src={imagesmain.image} alt={imagesmain.image}/>
             <div className = "container-info">
@@ -26,12 +27,20 @@ export default function ImageDisplay({imagesmain, deleteImage, key}) {
                 {/* {imagesmain.tagsthree ? <h4 className = "image-display-text">tags: {imagesmain.tagsthree} </h4> : ""}   */}
             
             </div>
-            <div > 
-            <button className = "remove-image-Button" onClick={handleClick}>Remove image</button>
+            <div className = {styles.remove}> 
+            <button className = "button is-white" onClick={handleClick} > <i class="fas fa-trash-alt"></i></button>
+            {/* <button className = "remove-image-Button" onClick={handleClick}>Remove image</button> */}
             </div> 
+        </div>
         </div>
     )
 }
+// <button className = "button is-light" onClick={handleClick} > <i class="fas fa-times-circle"></i></button>
+
+//<i class="fas fa-trash-alt"></i>
+//<i class="fas fa-times-circle"></i>
+//<i class="fas fa-times"></i>
+
 
 
 // addImage(title, image, imageDesc, by, tags, tagstwo, tagsthree)

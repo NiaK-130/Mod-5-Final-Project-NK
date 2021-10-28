@@ -381,15 +381,11 @@ function handleSubmit(event) {
                 </div>
 
 
-                {/*             <div className={styles.left}>
-                                     <img src={logonew} className={styles.logonew} alt='logo'/>
-                                     
-          
-                            </div>
+{/*       
                             <div className={styles.newleft}>
                             <img src={logonewtwo} className={styles.logonewtwo} alt='logo'/>
-                            </div> */}
-                
+                            </div>
+                 */}
                 
 
                 <div className={styles.headerbuttons}>

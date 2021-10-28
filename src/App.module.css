@@ -42,7 +42,7 @@
     height:10%;
     margin-left:20%;
     margin-top:1%;
-}
+} 
 
 .left > * {
   margin-right: 1.5rem;
@@ -50,6 +50,7 @@
 
 
 .appheaderbuttons{
+  
     display:flex;
     justify-content: space-between;
     align-items: center;
@@ -60,12 +61,18 @@
 .headerbuttons{
   display: flex;
   align-items: center;
-  margin-right: 15%;
-  margin-top: 3%;
+  margin-right: 5%;
+  margin-left: 20%;
+  margin-top: 1%;
+
+
+  
+
 }
 
 .headerbuttons > * {
   margin-left:1.5rem;
+  
 }
 
 .unsplashimages{
@@ -147,3 +154,28 @@
   }
 
 
+  /* .logonew{
+    width:50%;
+    margin-left: 5%;
+    margin-top:2;
+ 
+}
+
+.logonewtwo{
+  width:57%;
+  margin-left: 59%;
+  margin-top:0.06%;
+
+}
+
+
+.left{
+position: fixed;
+top: 0;
+}
+
+.newleft{
+position: fixed;
+top: 0;
+
+} */
