@@ -381,13 +381,6 @@ function handleSubmit(event) {
                 </div>
 
 
-{/*       
-                            <div className={styles.newleft}>
-                            <img src={logonewtwo} className={styles.logonewtwo} alt='logo'/>
-                            </div>
-                 */}
-                
-
                 <div className={styles.headerbuttons}>
                     <Link to="/ideasdisplay">
                       <button className="button is-black" > Get Ideas </button>
@@ -449,7 +442,8 @@ function handleSubmit(event) {
                 // loader={<Loader/>}  
               >
             <GlobalStyle/>
-            <WrapperImage>           
+            <WrapperImage>   
+                 
               {result.map((image) => (
                 
 
@@ -457,6 +451,8 @@ function handleSubmit(event) {
                  
                           
                 ))}
+
+              
         
             </WrapperImage>
         

@@ -154,28 +154,15 @@
   }
 
 
-  /* .logonew{
-    width:50%;
-    margin-left: 5%;
-    margin-top:2;
- 
+
+.mainmainimagebox{
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+
+    
+  
+
 }
-
-.logonewtwo{
-  width:57%;
-  margin-left: 59%;
-  margin-top:0.06%;
-
-}
-
-
-.left{
-position: fixed;
-top: 0;
-}
-
-.newleft{
-position: fixed;
-top: 0;
-
-} */

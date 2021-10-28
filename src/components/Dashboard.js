@@ -61,7 +61,11 @@ export default function Dashboard({imagesmain, addImage, deleteImage, user}) {
             {form ? <NewImageForm imagesmain={imagesmain} addImage={addImage}/> : ' '}
             
             {/* {imagesmain.map((imagepassed) => <ImageDisplay  imagepassed={imagepassed} key={imagepassed.id}/>)} */}
+           
+            <div className={styles.mainmainimagebox}> 
+           
             {imagesmain.map((image) => <ImageDisplay imagesmain={image} deleteImage={deleteImage}/>)}
+           </div>
         </div>
     )
 }

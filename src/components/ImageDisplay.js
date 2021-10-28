@@ -15,8 +15,8 @@ export default function ImageDisplay({imagesmain, deleteImage, key}) {
 
     return (
         <div className = {styles.outerimagedisplaycontainer}>
-        <div className = {styles.imagedisplaycontainer} >
-            <img className = {styles.imagebase} src={imagesmain.image} alt={imagesmain.image}/>
+        {/* <div className = {styles.imagedisplaycontainer} > */}
+            {imagesmain.image ? <img className = {styles.imagebase} src={imagesmain.image} alt={imagesmain.image}/> : <img src='https://www.unitedway.ca/wp-content/uploads/2017/06/TempProfile.jpg' alt="temp-img" /> }
             <div className = "container-info">
                 
                 {imagesmain.title ? <h2> Title: {imagesmain.title}</h2>: ""}
@@ -31,8 +31,9 @@ export default function ImageDisplay({imagesmain, deleteImage, key}) {
             <button className = "button is-white" onClick={handleClick} > <i class="fas fa-trash-alt"></i></button>
             {/* <button className = "remove-image-Button" onClick={handleClick}>Remove image</button> */}
             </div> 
+        {/* </div> */}
         </div>
-        </div>
+       
     )
 }
 // <button className = "button is-light" onClick={handleClick} > <i class="fas fa-times-circle"></i></button>
