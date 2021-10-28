@@ -6,7 +6,7 @@
     margin-top: 5%;
 } */
 
-.imagebase{
+.imagebase {
   
     /* float:left;
       display: flex;
@@ -43,13 +43,9 @@
     transition: transform 450ms;
     margin-left: 20px;
     margin-top: 220px;
-
-
-    
-    
- 
-
 }
+
+
 
 
 .outerimagedisplaycontainer:hover{

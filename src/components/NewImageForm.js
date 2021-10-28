@@ -56,9 +56,11 @@ export default function NewImageForm({addImage}) {
 
         <form onSubmit={handleSubmit}>
 
-            <button type="submit" name="submit" > Submit </button>
+            <div className = {styles.newimageformcontainer}>
 
-            <p className="title">
+            
+
+            <p className={styles.title}>
             <input className={`input ${styles[`input-control`]}`}
             onChange={(e) => setTitle(e.target.value)}
             type="text"
@@ -67,7 +69,7 @@ export default function NewImageForm({addImage}) {
             />
             </p>
 
-            <p className="image">
+            <p className={styles.image}>
             <input className={`input ${styles[`input-control`]}`}
             onChange={(e) => setImage(e.target.value)}
             type="text"
@@ -76,7 +78,7 @@ export default function NewImageForm({addImage}) {
             />
             </p>
 
-            <p className="imagedesc">
+            <p className={styles.imagedesc}>
             <input className={`input ${styles[`input-control`]}`}
             onChange={(e) => setImageDesc(e.target.value)}
             type="text"
@@ -85,7 +87,7 @@ export default function NewImageForm({addImage}) {
             />
             </p>
 
-            <p className="by">
+            <p className={styles.by}>
             <input className={`input ${styles[`input-control`]}`}
             onChange={(e) => setBy(e.target.value)}
             type="text"
@@ -95,7 +97,7 @@ export default function NewImageForm({addImage}) {
             </p>
 
 
-            <p className="tags">
+            <p className={styles.tag}>
             <input className={`input ${styles[`input-control`]}`}
             onChange={(e) => setTags(e.target.value)}
             type="text"
@@ -103,6 +105,8 @@ export default function NewImageForm({addImage}) {
             placeholder="Add a tag"
             />
             </p>
+
+            <button  className = {styles.submitbutton}  type="submit" name="submit" > Submit </button>
 
             {/* <p className="tags">
             <input className={`input ${styles[`input-control`]}`}
@@ -121,6 +125,10 @@ export default function NewImageForm({addImage}) {
             placeholder="Add a tag"
             />
             </p> */}
+
+            </div>
+
+            
 
 
             

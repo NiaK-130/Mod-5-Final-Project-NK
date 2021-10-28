@@ -16,7 +16,7 @@ export default function ImageDisplay({imagesmain, deleteImage, key}) {
     return (
         <div className = {styles.outerimagedisplaycontainer}>
         {/* <div className = {styles.imagedisplaycontainer} > */}
-            {imagesmain.image ? <img className = {styles.imagebase} src={imagesmain.image} alt={imagesmain.image}/> : <img src='https://www.unitedway.ca/wp-content/uploads/2017/06/TempProfile.jpg' alt="temp-img" /> }
+            <img className = {styles.imagebase} src={imagesmain.image} alt={imagesmain.image}/> 
             <div className = "container-info">
                 
                 {imagesmain.title ? <h2> Title: {imagesmain.title}</h2>: ""}
