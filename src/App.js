@@ -97,7 +97,12 @@ function App() {
 
 
   const [loggedIn, setLoggedIn] = useState(false)
-  const [user, setUser] = useState()
+  const [user, setUser] = useState({
+    avatar:"",
+    id:-1,
+    bio:"",
+    username:""
+  })
 
   const [imagesAdd, setImagesAdd] = useState("");
   const [result, setResult] = useState([]);
@@ -187,6 +192,7 @@ function handleSubmit(event) {
             if (response.ok) {
                 response.json()
                       .then((data) => {
+                        console.log("data",data)
                         setLoggedIn(true)
                         setUser(data.user)
                     });
@@ -231,6 +237,7 @@ function handleSubmit(event) {
 
 
   function login(username, password) {
+      localStorage.clear()
       fetch(`${url}/api/v1/login`, {
               method: "POST",
               headers: {
@@ -276,7 +283,7 @@ function handleSubmit(event) {
 
 
   // useEffect(() => {
-  //     // const token = localStorage.getItem("jwt");
+  //     const token = localStorage.getItem("jwt");
 
   //     fetch(`${url}/api/v1/images`, {
   //             method: "GET",
@@ -290,13 +297,24 @@ function handleSubmit(event) {
 
 
 
-  // useEffect(() => {
-  //   fetch(`${url}/images`).then((r) => {
-  //     if (r.ok) {
-  //       r.json().then((user) => { setImagesMain(user.imagesmain); setImagesMain(user) });
-  //     }
-  //   });
-  // }, []);
+  useEffect(() => {
+    const token = localStorage.getItem("jwt");
+    fetch(`${url}/api/v1/images`, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`
+        },
+      })
+    .then((r) => {  
+      if (r.ok) {
+        r.json().then((images) => 
+          {
+            console.log("Dataimagesfdsf afsdf",images)
+            setImagesMain(images)
+          });
+      }
+    });
+  }, []);
 
 
 
@@ -421,7 +439,7 @@ function handleSubmit(event) {
                 <input className = "input" onChange={handleChange} type="text" name="photo" placeholder="Search for Ideas"></input>
               </div>
               <div className={styles.ideasbutton}>
-                <button className = "button is-light" onClick={handleSubmit} > <i class="fas fa-search"></i></button>
+                <button className = "button is-light" onClick={handleSubmit} > <i className="fas fa-search"></i></button>
               </div>
             </div>
             <InfiniteScroll dataLength={imagesAdd.length}

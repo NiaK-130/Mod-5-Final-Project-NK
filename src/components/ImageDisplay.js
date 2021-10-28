@@ -1,4 +1,5 @@
 import React from "react";
+import styles from './ImageDisplay.module.css';
 
 
 
@@ -11,8 +12,8 @@ export default function ImageDisplay({imagesmain, deleteImage, key}) {
     }
 
     return (
-        <div className = "image-display-container" >
-            <img className = "image-base" src={imagesmain.image} alt={imagesmain.image}/>
+        <div className = {styles.imagedisplaycontainer} >
+            <img className = {styles.imagebase} src={imagesmain.image} alt={imagesmain.image}/>
             <div className = "container-info">
             <h2> Title: {imagesmain.title}</h2>
             <h4 className = "image-display-text" >Description: {imagesmain.image_desc} </h4> 

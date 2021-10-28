@@ -100,7 +100,7 @@ export const Loader = () => {
     return (
         <div className = "loading">
             <Loading >
-            <div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            <div className="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
             </Loading>
             
         </div>
