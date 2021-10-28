@@ -42,20 +42,18 @@
     max-height: 100px;
     transition: transform 450ms;
     margin-left: 20px;
-    margin-top: 150px;
+    margin-top: 220px;
 
 
     
     
-
-    
-     
+ 
 
 }
 
 
 .outerimagedisplaycontainer:hover{
-    transform: scale(2.1);
+    transform: scale(1.8);
     opacity: 1;
 }
 

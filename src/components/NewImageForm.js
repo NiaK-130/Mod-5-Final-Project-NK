@@ -56,6 +56,8 @@ export default function NewImageForm({addImage}) {
 
         <form onSubmit={handleSubmit}>
 
+            <button type="submit" name="submit" > Submit </button>
+
             <p className="title">
             <input className={`input ${styles[`input-control`]}`}
             onChange={(e) => setTitle(e.target.value)}
@@ -102,7 +104,7 @@ export default function NewImageForm({addImage}) {
             />
             </p>
 
-            <p className="tags">
+            {/* <p className="tags">
             <input className={`input ${styles[`input-control`]}`}
             onChange={(e) => setTagsTwo(e.target.value)}
             type="text"
@@ -118,10 +120,10 @@ export default function NewImageForm({addImage}) {
             value={tagsthree}
             placeholder="Add a tag"
             />
-            </p>
+            </p> */}
 
 
-            <button type="submit" name="submit" > Submit </button>
+            
 
 
         </form>
