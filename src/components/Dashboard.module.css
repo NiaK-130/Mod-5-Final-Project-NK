@@ -111,11 +111,30 @@ margin-top:-5%; */
 
 .mainmainimagebox{
 
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     justify-content: flex-start;
     margin: 315px;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
+    
+    ************* uncommet the above to get like before changes 
+    */ 
 
+
+ 
+    display: flex;
+    margin-left:290px;
+    /* overflow-y: hidden; */
+    overflow-y: scroll;
+    padding: 20px;
+    flex-wrap: wrap;
+    margin-top: -190px;
+ 
 
   }
+
+
+  .mainmainimagebox::-webkit-scrollbar{
+        display: none;
+  }
+  

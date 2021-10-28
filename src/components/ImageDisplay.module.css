@@ -12,39 +12,56 @@
       display: flex;
     flex-direction: column-reverse;
     align-items: center; */
+
+
+/*     
     width: 50%;
     margin-top:12%;
     position: relative;
-    width: 300px;
-    height: 220px;
     background: white;
     border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
     color: white;
     box-shadow: 20px 20px rgba(0,0,0,.15);
     transition: all .4s ease;
-    /* border-radius: 0% 0% 50% 50% / 0% 0% 5% 5% ; */
     box-shadow: 10px 10px rgba(0,0,0,.25);
     background-color: #ddd; margin: 3rem;
-    cursor: pointer;
+    cursor: pointer; */
    
+
+    /* ************* uncommet the above to get like before changes  */
+
 
 
 }
 
 
 .outerimagedisplaycontainer{
+    margin-right: 10px;
+    object-fit: contain;
+    width: 20%;
+    max-height: 100px;
+    transition: transform 450ms;
+    margin-left: 20px;
+    margin-top: 150px;
 
-    width:40%;
-    margin-top: 2%;
-    row-gap: 10px;
+
     
     
+
+    
+     
 
 }
 
 
+.outerimagedisplaycontainer:hover{
+    transform: scale(2.1);
+    opacity: 1;
+}
+
+
 .remove{
-    margin-top: -10%;
+    margin-top: 2%;
     margin-left: 50%;
  
    
