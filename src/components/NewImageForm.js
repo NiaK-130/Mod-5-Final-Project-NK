@@ -106,7 +106,11 @@ export default function NewImageForm({addImage}) {
             />
             </p>
 
-            <button  className = {styles.submitbutton}  type="submit" name="submit" > Submit </button>
+            <button  className = "button" type="submit" name="submit" > Submit </button>
+
+
+                {/* {styles.submitbutton}  */}
+           
 
             {/* <p className="tags">
             <input className={`input ${styles[`input-control`]}`}
