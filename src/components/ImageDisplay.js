@@ -11,16 +11,19 @@ export default function ImageDisplay({imagesmain, deleteImage, key}) {
         deleteImage(imagesmain.id)
     }
 
+    console.log("hkhjkhkjhkhkhk", imagesmain)
+
     return (
         <div className = {styles.imagedisplaycontainer} >
             <img className = {styles.imagebase} src={imagesmain.image} alt={imagesmain.image}/>
             <div className = "container-info">
-            <h2> Title: {imagesmain.title}</h2>
-            <h4 className = "image-display-text" >Description: {imagesmain.image_desc} </h4> 
-            <h4 className = "image-display-text">Author: {imagesmain.by} </h4> 
-            <h4 className = "image-display-text">tags: {imagesmain.tags} </h4>  
-            <h4 className = "image-display-text">tags: {imagesmain.tagstwo} </h4>  
-            <h4 className = "image-display-text">tags: {imagesmain.tagsthree} </h4>  
+                
+                {imagesmain.title ? <h2> Title: {imagesmain.title}</h2>: ""}
+                {imagesmain.image_desc ? <h4 className = "image-display-text" >Description: {imagesmain.image_desc} </h4> : ""} 
+                {imagesmain.by ? <h4 className = "image-display-text">Author: {imagesmain.by} </h4> : ""} 
+                {imagesmain.tags ? <h4 className = "image-display-text">tags: {imagesmain.tags} </h4> : ""}  
+                {imagesmain.tagstwo ? <h4 className = "image-display-text">tags: {imagesmain.tagstwo} </h4> : ""} 
+                {/* {imagesmain.tagsthree ? <h4 className = "image-display-text">tags: {imagesmain.tagsthree} </h4> : ""}   */}
             
             </div>
             <div > 

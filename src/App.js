@@ -38,6 +38,9 @@ import
   AddFavourites
  from './components/AddFavourites';
 
+import logonew from '../src/assets/logonew.png';
+import logonewtwo from '../src/assets/logonewtwo.png';
+
 const GlobalStyle = createGlobalStyle `
 * {
     margin: 0;
@@ -361,17 +364,6 @@ function handleSubmit(event) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
   //newimageform - title, image, imageDesc, by, tags, tagstwo, tagsthree
   //migration params - :title, :image, :image_desc, :by, :tags, :tagstwo, :tagsthree, :user_id
 
@@ -381,9 +373,22 @@ function handleSubmit(event) {
         <Router>
           <nav className="navbar-container">
             <div className={styles.appheaderbuttons}>
+
+
+
                 <div className={styles.left}> 
                   <img src={logo} className={styles.logo} alt='logo'/>
                 </div>
+
+
+                {/*             <div className={styles.left}>
+                                     <img src={logonew} className={styles.logonew} alt='logo'/>
+                                     
+          
+                            </div>
+                            <div className={styles.newleft}>
+                            <img src={logonewtwo} className={styles.logonewtwo} alt='logo'/>
+                            </div> */}
                 
                 
 
@@ -420,7 +425,7 @@ function handleSubmit(event) {
         
           
           <Route exact path="/ideasdisplay">
-            <Ideasdisplay favComponent={AddFavourites} />
+            <Ideasdisplay favComponent={AddFavourites} addImage={addImage}/>
 
 
   <div className={styles.getideastext}>
@@ -452,7 +457,7 @@ function handleSubmit(event) {
               {result.map((image) => (
                 
 
-                  <Ideasdisplay url={image.urls.regular} key={image.id} favComponent={AddFavourites}/>
+                  <Ideasdisplay addImage={addImage} url={image.urls.regular} key={image.id} favComponent={AddFavourites}/>
                  
                           
                 ))}

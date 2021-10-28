@@ -25,7 +25,7 @@ const IdeasStyle = createGlobalStyle`
 
 
 
-function Ideasdisplay({url, key, favComponent}) {
+function Ideasdisplay({url, key, favComponent,addImage}) {
     const FavComponent = favComponent;
 
 
@@ -38,7 +38,7 @@ function Ideasdisplay({url, key, favComponent}) {
                 <span>
             <div>
             <img src = {url} key={key} alt="" />
-            <p>  <FavComponent/> </p> 
+            <p>  <FavComponent url={url} addImage={addImage}/> </p> 
             </div>
             
             </span>

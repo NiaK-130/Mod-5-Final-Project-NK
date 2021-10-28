@@ -23,10 +23,10 @@ export default function Dashboard({imagesmain, addImage, deleteImage, user}) {
         
 
         <div className = "dashboard-div">
-          
-          <div className = {styles.yourdashboard}>
-            <h2> Your Dashboard </h2>
-            </div>
+            
+            <span className={`icon is-small ${styles['search-icon']}`}><i className="fas fa-columns"></i></span><span className={styles.yourdashboard}>Dashboard</span>
+
+           
     
 
             <div className = {styles.dash}>
@@ -45,7 +45,10 @@ export default function Dashboard({imagesmain, addImage, deleteImage, user}) {
                 <img className="hrlin" src={process.env.PUBLIC_URL + '/hrline.png'} alt="hrline-block" />
             </div >
 
-     
+
+            <div className = {styles.userimg}>
+            <img className = {styles.userimage}src = {user.bio} alt="user-img"/>
+            </div>
 
             <div className = {styles.welcome}>
             <h1>Welcome {user.avatar} </h1>

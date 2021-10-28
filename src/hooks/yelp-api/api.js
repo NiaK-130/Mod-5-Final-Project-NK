@@ -10,5 +10,4 @@ export function get(path, queryParams){
             withCredentials: true,
         }
     });
-  
 }

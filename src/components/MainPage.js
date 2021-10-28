@@ -30,7 +30,6 @@ export default function MainPage({ login, signup }) {
                  <Router>
                      <div className={styles.mainpagebuttons}>
                              <div className={styles.left}>
-                                     {/* <img src={logo} className={styles.logo} alt='logo'/> */}
                                      <img src={logonew} className={styles.logonew} alt='logo'/>
                                      
           
