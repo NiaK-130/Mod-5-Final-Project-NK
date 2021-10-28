@@ -28,7 +28,7 @@ export default function ImageDisplay({imagesmain, deleteImage, key}) {
             
             </div>
             <div className = {styles.remove}> 
-            <button className = "button is-white" onClick={handleClick} > <i class="fas fa-trash-alt"></i></button>
+            <button  className = "button is-white" onClick={handleClick} > <span className={`icon is-small ${styles['search-icon']}`}><i class="fas fa-trash-alt"></i> </span></button>
             {/* <button className = "remove-image-Button" onClick={handleClick}>Remove image</button> */}
             </div> 
         {/* </div> */}
