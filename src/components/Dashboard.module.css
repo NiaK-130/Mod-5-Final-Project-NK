@@ -125,10 +125,10 @@ margin-top:-5%; */
     display: flex;
     margin-left:290px;
     /* overflow-y: hidden; */
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     padding: 20px;
     flex-wrap: wrap;
-    margin-top: -190px;
+    margin-top: -250px;
  
 
   }

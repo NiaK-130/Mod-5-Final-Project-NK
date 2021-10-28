@@ -58,6 +58,8 @@ export default function NewImageForm({addImage}) {
 
             <div className = {styles.newimageformcontainer}>
 
+            <button  className = "button" type="submit" name="submit" > Submit </button>
+
             
 
             <p className={styles.title}>
@@ -106,7 +108,7 @@ export default function NewImageForm({addImage}) {
             />
             </p>
 
-            <button  className = "button" type="submit" name="submit" > Submit </button>
+            
 
 
                 {/* {styles.submitbutton}  */}
