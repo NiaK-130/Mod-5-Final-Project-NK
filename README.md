@@ -17,31 +17,23 @@ API
 Contains 5 RESTful routes: show, index, create, update, and destroy.
 
 users
-{
-  id: 1
+{id: 1
   username: "samplename"
   password: "hardpassword123"
-  full_name: "Sample Name"
-  
-  }
+  full_name: "Sample Name"}
 
 posts
-{
-  id: 1
+{id: 1
   header: "new kitchen renovation"
   description: "remodelled the entire kitchen, a 3 month project"
   notes: "want to do the same cabinets"
-  user_id : 1
-  
-  }
+  user_id : 1}
 
 professionals
-{
-company_name: "JB Designs"
+{company_name: "JB Designs"
 phone_number: 768-894-7890
 address: 123 Lantz Avenue, San Jose CA
-professional_id:  1
-  }
+professional_id:  1}
 
 
 
